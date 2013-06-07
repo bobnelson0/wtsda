@@ -1,0 +1,29 @@
+{% extends "OryzoneBoilerplateBundle::html5.html.twig" %}
+
+{% block head_meta_viewport_tag_content %}width=device-width, initial-scale=1.0{% endblock %}
+
+{% block head_css %}
+<link rel="shortcut icon" sizes="16x16" href="{{ asset('bundles/wtsdacore/images/favicon.ico') }}" />
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block head_js %}{% endblock %}
+
+{% block body_container %}
+<div id="header">
+{% block body_container_header %}{% endblock %}
+</div>
+
+<div id="main">
+{% block body_container_main %}{% endblock %}
+</div>
+
+<div id="footer">
+{% block body_container_footer %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block body_js_jquery %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+{% endblock %}

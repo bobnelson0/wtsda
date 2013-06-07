@@ -1,0 +1,17 @@
+1. Create login page + layout
+2. Create permission functions
+3. Implement ACL
+
+Bundle Structure
+Name exs: 
+WtsdaAdminBundle
+WtsdaAdminEventsBundle
+WtsdaAppBundle
+WtsdaAppEventsBundle
+
+Wtsda
+\Admin
+    AdminBundle
+    \Events
+\App
+    \Events

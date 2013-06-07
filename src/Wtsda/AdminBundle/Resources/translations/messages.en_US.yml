@@ -1,0 +1,14 @@
+admin:
+  label:
+    ok: OK
+    cancel: Cancel
+    save: Save
+
+    permission: Permission
+    permissions: Permissions
+    role: Role
+    roles: Roles
+    user: User
+    school: Studio
+    profile: Profile
+

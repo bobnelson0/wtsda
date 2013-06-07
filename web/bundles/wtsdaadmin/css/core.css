@@ -1,0 +1,10 @@
+#main, #footer{
+    margin: 3px auto;
+    width: 97%;
+}
+
+#footer {
+    margin: 20px auto;
+    width: 97%;
+    border-top: 1px solid #999;
+}

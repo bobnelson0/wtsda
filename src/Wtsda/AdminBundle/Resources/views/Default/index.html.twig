@@ -1,0 +1,17 @@
+{% extends "WtsdaAdminBundle::layout.html.twig" %}
+
+{% block head_title %}WTSDA Admin{% endblock %}
+
+{% block body_container_main %}
+    <h3>Links</h3>
+    <ul>
+        <li><a href="#">{% trans %}admin.label.permissions{% endtrans %}</a></li>
+        <li><a href="#">{% trans %}admin.label.roles{% endtrans %}</a></li>
+        <li><a href="#">Role Permissions</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">User Permissions</a></li>
+        <li><a href="#">Profiles</a></li>
+        <li><a href="#">Studios</a></li>
+    </ul>
+
+{% endblock %}

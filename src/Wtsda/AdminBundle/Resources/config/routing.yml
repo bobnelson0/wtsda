@@ -1,0 +1,3 @@
+wtsda_admin_index:
+    pattern:  /admin/
+    defaults: { _controller: WtsdaAdminBundle:Default:index }

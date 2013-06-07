@@ -1,0 +1,12 @@
+wtsda_admin:
+    resource: "@WtsdaAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+wtsda_core:
+    resource: "@WtsdaCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+wtsda_app:
+    resource: "@WtsdaAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
