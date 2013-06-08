@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Roles")
+ * @ORM\Table(name="RankGroups")
  */
-class Role
+class RankGroups
 {
     /**
      * @ORM\Id
@@ -21,11 +21,6 @@ class Role
      * @ORM\Column(type="string", length=30)
      */
     protected $name;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $description;
 
     /**
      * @ORM\Column(name="`order`", type="integer")
@@ -46,7 +41,7 @@ class Role
      * Set name
      *
      * @param string $name
-     * @return Role
+     * @return RankGroups
      */
     public function setName($name)
     {
@@ -65,33 +60,11 @@ class Role
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     * @return Role
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Set order
      *
      * @param int $order
      * @throws \InvalidArgumentException if $order is not an integer
-     * @return Role
+     * @return RankGroup
      */
     public function setOrder($order)
     {
@@ -105,7 +78,7 @@ class Role
     /**
      * Get order
      *
-     * @return string 
+     * @return integer 
      */
     public function getOrder()
     {

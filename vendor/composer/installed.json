@@ -1862,5 +1862,117 @@
             "orm",
             "persistence"
         ]
+    },
+    {
+        "name": "doctrine/migrations",
+        "version": "v1.0-ALPHA1",
+        "version_normalized": "1.0.0.0-alpha1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/migrations",
+            "reference": "v1.0-ALPHA1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/doctrine/migrations/zipball/v1.0-ALPHA1",
+            "reference": "v1.0-ALPHA1",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/dbal": ">=2.0,<2.5.x-dev",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "symfony/console": "2.*",
+            "symfony/yaml": "2.*"
+        },
+        "suggest": {
+            "symfony/console": "to run the migration from the console"
+        },
+        "time": "2012-10-05 04:15:13",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\DBAL\\Migrations": "lib"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan H. Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            }
+        ],
+        "description": "Database Schema migrations using Doctrine DBAL",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "migrations"
+        ]
+    },
+    {
+        "name": "doctrine/doctrine-migrations-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Doctrine/Bundle/MigrationsBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/DoctrineMigrationsBundle.git",
+            "reference": "6891b8595a003afce8040dd794e6e9f379bbfafc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/6891b8595a003afce8040dd794e6e9f379bbfafc",
+            "reference": "6891b8595a003afce8040dd794e6e9f379bbfafc",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/doctrine-bundle": ">=1.0,<2.0",
+            "doctrine/migrations": "*",
+            "php": ">=5.3.2",
+            "symfony/framework-bundle": ">=2.1.0,<2.4-dev"
+        },
+        "time": "2013-04-27 11:57:31",
+        "type": "symfony-bundle",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Bundle\\MigrationsBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Doctrine Project",
+                "homepage": "http://www.doctrine-project.org"
+            }
+        ],
+        "description": "Symfony DoctrineMigrationsBundle",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "dbal",
+            "migrations",
+            "schema"
+        ]
     }
 ]

@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Roles")
+ * @ORM\Table(name="Forms_EmptyHands")
  */
-class Role
+class Forms_EmptyHands
 {
     /**
      * @ORM\Id
@@ -23,11 +23,6 @@ class Role
     protected $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $description;
-
-    /**
      * @ORM\Column(name="`order`", type="integer")
      */
     protected $order;
@@ -35,7 +30,7 @@ class Role
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -46,7 +41,7 @@ class Role
      * Set name
      *
      * @param string $name
-     * @return Role
+     * @return Form_EmptyHands
      */
     public function setName($name)
     {
@@ -57,7 +52,7 @@ class Role
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -65,33 +60,11 @@ class Role
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     * @return Role
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Set order
      *
      * @param int $order
      * @throws \InvalidArgumentException if $order is not an integer
-     * @return Role
+     * @return Form_EmptyHands
      */
     public function setOrder($order)
     {
@@ -105,7 +78,7 @@ class Role
     /**
      * Get order
      *
-     * @return string 
+     * @return integer
      */
     public function getOrder()
     {

@@ -1,6 +1,6 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding-top: 5px;
+    padding-bottom: 20px;
 }
 
 /* Custom container */
@@ -67,9 +67,19 @@ body {
     border-radius: 0 3px 3px 0;
 }
 
+/* Header */
+#header {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.masthead {
+    margin-top: 5px;
+}
+
 /* Main */
 #main {
-    margin: 5px auto 25px auto;
+    margin: 0 auto 25px auto;
     max-width: 1000px;
 }
 

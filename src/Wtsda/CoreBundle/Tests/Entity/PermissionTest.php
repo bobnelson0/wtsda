@@ -44,7 +44,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testSetSetDescriptionReturnsObject()
+    public function testSetDescriptionReturnsObject()
     {
         $perm = new Permission();
         $expected = $perm;
