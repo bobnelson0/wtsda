@@ -14,7 +14,7 @@
     bootstrap                   = "bootstrap.php.cache" >
 
     <testsuites>
-        <testsuite name="Project Test Suite">
+        <testsuite name="WTSDA Test Suite">
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
         </testsuite>
@@ -36,6 +36,22 @@
                 <directory>../src/*/Bundle/*Bundle/Tests</directory>
             </exclude>
         </whitelist>
+        <blacklist>
+            <directory suffix=".php">../vendor/*</directory>
+        </blacklist>
     </filter>
+
+    <logging>
+        <log type="coverage-html" target="../web/phpunit/coverage/html" charset="UTF-8"
+             highlight="true" lowUpperBound="50" highLowerBound="90"/>
+        <!-- <log type="coverage-clover" target="../web/phpunit/coverage/coverage.xml"/>
+        <log type="coverage-php" target="../web/phpunit/coverage/coverage.serialized"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/> -->
+        <!--<log type="tap" target="../web/phpunit/logs/log.tap"/>-->
+        <log type="json" target="../web/phpunit/logs/log.json"/>
+        <log type="junit" target="../web/phpunit/logs/log.xml" logIncompleteSkipped="false"/>
+        <log type="testdox-html" target="../web/phpunit/docs/testdoc.html"/>
+        <log type="testdox-text" target="../web/phpunit/docs/testdoc.txt"/>
+    </logging>
 
 </phpunit>
