@@ -2,6 +2,6 @@ wtsda_app_index:
     pattern:  /
     defaults: { _controller: WtsdaAppBundle:Default:index }
 
-wtsda_app_login:
-    pattern: /login/
-    defaults: { _controller: WtsdaAppBundle:User:login }
+wtsda_app_events:
+    pattern: /events/
+    defaults: { _controller: WtsdaAppBundle:Events:Index }
