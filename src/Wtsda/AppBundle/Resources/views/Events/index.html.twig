@@ -1,0 +1,59 @@
+{% extends "WtsdaAppBundle::layout.html.twig" %}
+
+{% block head_title %}Welcome - WTSDA Region 1{% endblock %}
+
+{% block body_container_main %}
+    <div class="row-fluid">
+        <div class="span9">
+            <div class="well well-small">
+                <h3>Upcoming Events</h3>
+                <h5>2013</h5>
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                Collapsible Group Item #1
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                Anim pariatur cliche...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                Collapsible Group Item #2
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                Anim pariatur cliche...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="span3 text-center">
+            <div class="well well-small">
+                <span class="label label-info" style="width:97%;">Scholarship Donations</span>
+                <p>
+                <br/>
+                <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                </p>
+
+                <span class="label label-info" style="width:97%;">Facebook Activity</span>
+                <p>Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done</p>
+
+                <span class="label label-info" style="width:97%;">Twitter Activity</span>
+                <p>Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done</p>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
