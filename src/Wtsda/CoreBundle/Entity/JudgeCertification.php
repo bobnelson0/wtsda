@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Forms_EmptyHands")
+ * @ORM\Table(name="JudgeCertifications")
  */
-class Forms_EmptyHands
+class JudgeCertification
 {
     /**
      * @ORM\Id
@@ -41,7 +41,7 @@ class Forms_EmptyHands
      * Set name
      *
      * @param string $name
-     * @return Form_EmptyHands
+     * @return JudgeCertification
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ class Forms_EmptyHands
      *
      * @param int $order
      * @throws \InvalidArgumentException if $order is not an integer
-     * @return Form_EmptyHands
+     * @return JudgeCertification
      */
     public function setOrder($order)
     {

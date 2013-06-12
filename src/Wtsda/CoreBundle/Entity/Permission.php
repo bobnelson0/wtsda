@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="Permissions")
- * @ORM\Entity(repositoryClass="Wtsda\CoreBundle\Repository\Permission")
  */
 class Permission
 {
@@ -27,6 +26,18 @@ class Permission
      * @ORM\Column(type="string", length=255)
      */
     protected $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Role", mappedBy="permissions")
+     */
+    protected $roles;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -82,5 +93,38 @@ class Permission
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Add roles
+     *
+     * @param \Wtsda\CoreBundle\Entity\Role $roles
+     * @return Permission
+     */
+    public function addRole(\Wtsda\CoreBundle\Entity\Role $roles)
+    {
+        $this->roles[] = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Remove roles
+     *
+     * @param \Wtsda\CoreBundle\Entity\Role $roles
+     */
+    public function removeRole(\Wtsda\CoreBundle\Entity\Role $roles)
+    {
+        $this->roles->removeElement($roles);
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }

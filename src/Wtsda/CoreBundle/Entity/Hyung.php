@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="JudgeCertifications")
+ * @ORM\Table(name="Hyungs")
  */
-class JudgeCertifications
+class Hyung
 {
     /**
      * @ORM\Id
@@ -23,14 +23,21 @@ class JudgeCertifications
     protected $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity="HyungType", inversedBy="hyungs")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     **/
+    protected $type;
+
+    /**
      * @ORM\Column(name="`order`", type="integer")
      */
     protected $order;
 
+
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -41,18 +48,19 @@ class JudgeCertifications
      * Set name
      *
      * @param string $name
-     * @return JudgeCertifications
+     * @return Hyung
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -62,26 +70,46 @@ class JudgeCertifications
     /**
      * Set order
      *
-     * @param int $order
-     * @throws \InvalidArgumentException if $order is not an integer
-     * @return JudgeCertifications
+     * @param integer $order
+     * @return Hyung
      */
     public function setOrder($order)
     {
-        if(!is_int($order)) {
-            throw new \InvalidArgumentException;
-        }
         $this->order = $order;
+
         return $this;
     }
 
     /**
      * Get order
      *
-     * @return integer
+     * @return integer 
      */
     public function getOrder()
     {
         return $this->order;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \Wtsda\CoreBundle\Entity\HyungType $type
+     * @return Hyung
+     */
+    public function setType(\Wtsda\CoreBundle\Entity\HyungType $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \Wtsda\CoreBundle\Entity\HyungType 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

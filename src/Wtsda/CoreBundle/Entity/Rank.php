@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Forms_Weapons")
+ * @ORM\Table(name="Ranks")
  */
-class Forms_Weapons
+class Rank
 {
     /**
      * @ORM\Id
@@ -28,9 +28,16 @@ class Forms_Weapons
     protected $order;
 
     /**
+     * @ORM\ManyToOne(targetEntity="RankGroup", inversedBy="ranks")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    protected $rankGroup;
+
+
+    /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -41,18 +48,19 @@ class Forms_Weapons
      * Set name
      *
      * @param string $name
-     * @return Forms_Weapons
+     * @return Rank
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -62,26 +70,46 @@ class Forms_Weapons
     /**
      * Set order
      *
-     * @param int $order
-     * @throws \InvalidArgumentException if $order is not an integer
-     * @return Forms_Weapons
+     * @param integer $order
+     * @return Rank
      */
     public function setOrder($order)
     {
-        if(!is_int($order)) {
-            throw new \InvalidArgumentException;
-        }
         $this->order = $order;
+
         return $this;
     }
 
     /**
      * Get order
      *
-     * @return integer
+     * @return integer 
      */
     public function getOrder()
     {
         return $this->order;
+    }
+
+    /**
+     * Set rankGroup
+     *
+     * @param \Wtsda\CoreBundle\Entity\RankGroup $rankGroup
+     * @return Rank
+     */
+    public function setRankGroup(\Wtsda\CoreBundle\Entity\RankGroup $rankGroup = null)
+    {
+        $this->rankGroup = $rankGroup;
+
+        return $this;
+    }
+
+    /**
+     * Get rankGroup
+     *
+     * @return \Wtsda\CoreBundle\Entity\RankGroup 
+     */
+    public function getRankGroup()
+    {
+        return $this->rankGroup;
     }
 }

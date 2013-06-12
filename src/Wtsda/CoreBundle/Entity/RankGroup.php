@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="RankGroups")
  */
-class RankGroups
+class RankGroup
 {
     /**
      * @ORM\Id
@@ -28,6 +28,19 @@ class RankGroups
     protected $order;
 
     /**
+     * @ORM\OneToMany(targetEntity="Rank", mappedBy="rankGroup")
+     */
+    protected $ranks;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ranks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer 
@@ -41,11 +54,12 @@ class RankGroups
      * Set name
      *
      * @param string $name
-     * @return RankGroups
+     * @return RankGroup
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -62,16 +76,13 @@ class RankGroups
     /**
      * Set order
      *
-     * @param int $order
-     * @throws \InvalidArgumentException if $order is not an integer
+     * @param integer $order
      * @return RankGroup
      */
     public function setOrder($order)
     {
-        if(!is_int($order)) {
-            throw new \InvalidArgumentException;
-        }
         $this->order = $order;
+
         return $this;
     }
 
@@ -83,5 +94,38 @@ class RankGroups
     public function getOrder()
     {
         return $this->order;
+    }
+
+    /**
+     * Add ranks
+     *
+     * @param \Wtsda\CoreBundle\Entity\Rank $ranks
+     * @return RankGroup
+     */
+    public function addRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
+    {
+        $this->ranks[] = $ranks;
+
+        return $this;
+    }
+
+    /**
+     * Remove ranks
+     *
+     * @param \Wtsda\CoreBundle\Entity\Rank $ranks
+     */
+    public function removeRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
+    {
+        $this->ranks->removeElement($ranks);
+    }
+
+    /**
+     * Get ranks
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRanks()
+    {
+        return $this->ranks;
     }
 }
