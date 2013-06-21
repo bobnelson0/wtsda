@@ -1,23 +1,36 @@
 {% extends "WtsdaCoreBundle::base.html.twig" %}
 
+{% if includeSideBar is not defined %}
+    {% set includeSideBar = true %}
+{% endif %}
+
+{% block head_title %}
+    {% block head_title_tag_page %}{% endblock %}
+    {% block head_title_tag_site %} | WTSDA Region 1{% endblock %}
+{% endblock %}
+
 {% block head_css %}
     {{ parent() }}
     {% stylesheets 'bundles/wtsdaapp/css/*' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
+        <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock %}
 
 {% block body_container_header %}
     <!--TODO: Translate here -->
+    <!--TODO: fix styles to be external -->
     <div class="row-fluid">
         <div class="span2">
-            <img style="width:100px; height: 100px;" src="{{ asset('bundles/wtsdaapp/images/logos/wtsda_129x129.png') }}" />
+            <a href="http://www.worldtangsoodo.com/" target="_blank">
+                <img style="width:100px; height: 100px;" src="{{ asset('bundles/wtsdaapp/images/logos/wtsda_129x129.png') }}" />
+            </a>
         </div>
         <div class="span8 text-right">
             <h1 class="muted">WTSDA Region 1</h1>
             <p class="muted">
-            A proud member of the World Tang Soo Do Association<br />
-            Traditionalism. Professionalism. Brotherhood.
+                A proud member of the World Tang Soo Do Association<br />
+                <!-- Traditionalism. Professionalism. Brotherhood. <br /> -->
+                Covering WA, OR, HI, ID, NV, Northern CA
             </p>
         </div>
         <div class="span2 text-right">
@@ -29,22 +42,77 @@
             <div class="navbar-inner">
                 <div class="container">
                     <ul class="nav">
-                        <li class="active"><a href="{{ path('wtsda_app_index') }}">Latest</a></li>
-                        <li><a href="{{ path('wtsda_app_events') }}">Events</a></li>
-                        <li><a href="#">Schools</a></li>
-                        <li><a href="#">Scholarship</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">About</a></li>
+                        <li{% block navActIndex %}{% endblock %}><a href="{{ path('wtsda_app_index') }}">Latest</a></li>
+                        <li{% block navActEvents %}{% endblock %}><a href="{{ path('wtsda_app_events') }}">Events</a></li>
+                        <li{% block navActDojangs %}{% endblock %}><a href="#">Dojangs</a></li>
+                        <li{% block navActScholarship %}{% endblock %}><a href="#">Scholarship</a></li>
+                        <li{% block navActMedia %}{% endblock %}><a href="#">Media</a></li>
+                        <li{% block navActAbout %}{% endblock %}><a href="#">About</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
 
+{% block body_container_main %}
+    {% block body_container_main_prepend %}{% endblock %}
+    {%  if not includeSideBar %}
+        {% set spanNum = 'span12' %}
+    {% else %}
+        {% set spanNum = 'span9' %}
+    {% endif %}
+    <div class="row-fluid">
+        <div class="{{ spanNum }}">
+            <div class="well well-small">
+                {% block leftWellContent %}{% endblock %}
+            </div>
+        </div>
+    {% if includeSideBar %}
+        <div class="span3 text-center">
+            <div class="well well-small">
+                <span class="label label-info" style="width:97%;">Scholarship Donations</span>
+                <p>
+                    <br/>
+                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                </p>
+
+                <span class="label label-info" style="width:97%;">Facebook Activity</span>
+                <p>
+                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
+                </p>
+
+                <span class="label label-info" style="width:97%;">Twitter Activity</span>
+                <p>
+                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
+                </p>
+
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    {% block body_container_main_append %}{% endblock %}
 {% endblock %}
 
 {% block body_container_footer %}
-<div class="pull-left">&copy; 2013 WTSDA Region 1</div>
-<div class="pull-right">Contact Us <i class="icon-envelope"></i></div>
+    <div class="row-fluid">
+        <div class="span6 pull-left">
+            <a class="no-change" href="#">
+                <strong>&copy; {{ "now"|date("Y") }} WTSDA Region 1</strong>
+            </a> |
+            <!--TODO: provide link or contact page -->
+            <a class="no-change" href="#">Contact Us <i class="icon-envelope"></i></a>
+            <br />
+            Regional Director: Master John Auer<br />
+            Phone: 541-672-6190<br />
+            Email: director@wtsda-region1.org<br />
+        </div>
+        <div class="span6 text-right">
+            <small><em>
+                The information/content within the pages of the World Tang Soo Do Association web site is the sole property of the World Tang Soo Do Association. The images and information contained herein may not be reproduced without the express written permission of the World Tang Soo Do Association.
+                The World Tang Soo Do Association is not responsible for the content of any information contained in a website which is linked to our home site.
+            </em></small>
+        </div>
+    </div>
 {% endblock %}
 
