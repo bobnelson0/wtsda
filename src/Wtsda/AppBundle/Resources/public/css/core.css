@@ -83,6 +83,18 @@ body {
     max-width: 1000px;
 }
 
+#main h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#main div.accordion-group {
+    background-color: white;
+}
+
+#main div.accordion-group hr {
+    margin: 7px 0;
+}
+
 /* Footer */
 #footer {
     border-top: 1px solid gray;

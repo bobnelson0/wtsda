@@ -13,3 +13,5 @@ parameters:
 
     locale: en_US
     secret: 3ac469337e2d1c1eba780c5ddb1ec7e633156202
+
+    google_api_key: AIzaSyA0vqBPy_a8E4tIM5b4-CxqYpA7lvOOuG8

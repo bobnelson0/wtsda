@@ -1,35 +1,62 @@
-{% extends "WtsdaAppBundle::layout.html.twig" %}
+{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+
+{% set useMap = true %}
+
 {% block navActEvents %} class="active"{% endblock %}
 
 {% block head_title_tag_page %}Events{% endblock %}
 
 {% block leftWellContent %}
     <h3>Upcoming Events</h3>
-    <h5>2013</h5>
-    <div class="accordion" id="accordion2">
+
+    <div id="accordionEvents" class="accordion">
+        {% for key, event in events %}
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Collapsible Group Item #1
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="#collapse{{ key }}">
+                    {{ event.date|date("m-d-Y")}} | {{ event.name }}
                 </a>
             </div>
-            <div id="collapseOne" class="accordion-body collapse">
+            <div id="collapse{{ key }}" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    Anim pariatur cliche...
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <strong>Name:</strong>  {{ event.name }}<br />
+                            <strong>Date &amp; Time:</strong> {{ event.date }} {{ event.time }}<br />
+                            <strong>Host:</strong>  {{ event.host }}
+                            <hr />
+                            <strong>Location</strong>
+                            <br />
+                            {% if event.location.name is not empty %}
+                                {{ event.location.name }}<br />
+                            {% endif %}
+                            <address>
+                                {{ event.location.address }}
+                            </address>
+                        </div>
+                        <div class="span6">
+                            <span class="pull-right">
+                                <!-- <img data-src="holder.js/140x140" class="img-polaroid" alt="265x150" style="width: 265px; height: 150px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFC0lEQVR4Xu3XV0ukQRCF4TIgCAZUMIIJBQMKBvDWn64XillRVEyYLsScMevSDQ6mRc+O+8lY79ws61RNW6cevmmzjo6OnowXCXwxgSzAfDEpymICgAGClABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFGQ/m7u7OxsbGLD8/37q7u99tdHt725aWlqyjo8MqKiri+wcHB7aysmI3NzdWUlJira2tlpeX9yUNSZ/3pV8qwaKMBnN6emqLi4t2cXFhpaWl78CE9ycnJ+3x8TEFJiAZGhqyoqIiq6qqipgCpPb29k9jT/q8T3+hHyjIWDD39/c2MDBglZWVtr+/b8XFxa/AhCfB6OhofHKcnZ2lwOzs7Nj8/Hzq/1NTU/H9/v5+29zcjE+exsZGq62tjf0PDw/W19dnOTk5337eD+w77SMzFszT05NdXl5aQUGBDQ4OWmFh4SswMzMzFtCE5U9PT6eArK+v29ramvX09MSvo7m5Odvd3Y1gcnNzLQA6Pj6OT6zDw0Pr6uqysrIy+1/npb3BhD8gY8G8zOktmI2NDQswwp3m+vo6omhra4tfPVtbW6/AzM7O2t7eXgrM7e2tjYyMWPi3rq7Ompub363kO89LeN9pH/crwYyPj1u4b7x9tbS0WHZ2ti0sLFhnZ6eVl5fHO875+XkEE17hqRUu0eGr6KN7Uah5Cyad89LeYMIf8CvBnJycxIWHV8CwurpqDQ0NVlNTE382PDz84aU3XI7D8q+urqy6ujo+jZqamqy+vv7VWt6C+dfzEt71txz3K8G8TCbcQ17eYcJ7f/uzenl5OSIJf4KHp8/ExES8EPf29sZL9fProzvT83vKed+ywYQ/5FeASTgz18cBxvX69eEBo2fmugMwrtevDw8YPTPXHYBxvX59eMDombnuAIzr9evDA0bPzHUHYFyvXx8eMHpmrjsA43r9+vCA0TNz3QEY1+vXhweMnpnrDsC4Xr8+PGD0zFx3AMb1+vXhAaNn5roDMK7Xrw8PGD0z1x2Acb1+fXjA6Jm57gCM6/XrwwNGz8x1B2Bcr18fHjB6Zq47AON6/frwgNEzc90BGNfr14cHjJ6Z6w7AuF6/Pjxg9MxcdwDG9fr14QGjZ+a6AzCu168PDxg9M9cdgHG9fn14wOiZue4AjOv168MDRs/MdQdgXK9fHx4wemauOwDjev368IDRM3PdARjX69eHB4yemesOwLhevz48YPTMXHcAxvX69eEBo2fmugMwrtevDw8YPTPXHYBxvX59eMDombnuAIzr9evDA0bPzHUHYFyvXx8eMHpmrjsA43r9+vCA0TNz3QEY1+vXhweMnpnrDsC4Xr8+PGD0zFx3AMb1+vXh/wBs3s6mncQfmwAAAABJRU5ErkJggg=="> -->
+                                <a href="//maps.google.com/?q={{ event.location.address|url_encode }}" target="_blank">
+                                    <img src="//maps.googleapis.com/maps/api/staticmap?center={{ event.location.address|url_encode }}&zoom=12&size=300x150&maptype=roadmap&markers=color:blue%7C{{ event.location.address|url_encode }}&visual_refresh=true&sensor=false" />
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <p>
+                                <strong>Information:</strong>
+                                <br />
+                                {{ event.description|nl2br }}
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Collapsible Group Item #2
-                </a>
-            </div>
-            <div id="collapseTwo" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    Anim pariatur cliche...
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "WtsdaAppBundle:Layouts:default.html.twig" %}
+
+{% block body_container_main_content %}
+    <div class="row-fluid">
+        <div class="span9">
+            <div class="well well-small">
+                {% block leftWellContent %}{% endblock %}
+            </div>
+        </div>
+        <div class="span3 text-center">
+            <div class="well well-small">
+                <span class="label label-info" style="width:97%;">Scholarship Donations</span>
+                <p>
+                    <br />
+                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                </p>
+
+                <span class="label label-info" style="width:97%;">Facebook Activity</span>
+                <p>
+                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
+                </p>
+
+                <span class="label label-info" style="width:97%;">Twitter Activity</span>
+                <p>
+                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
+                </p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

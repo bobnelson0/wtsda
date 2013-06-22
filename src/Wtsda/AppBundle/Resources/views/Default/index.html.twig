@@ -1,4 +1,5 @@
-{% extends "WtsdaAppBundle::layout.html.twig" %}
+{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+
 {% block navActIndex %} class="active"{% endblock %}
 
 {% block head_title_tag_page %}Welcome{% endblock %}
@@ -33,6 +34,7 @@
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
 {% endblock %}
+
 {% block leftWellContent %}
     <h3>Some Announcement</h3>
     <p>

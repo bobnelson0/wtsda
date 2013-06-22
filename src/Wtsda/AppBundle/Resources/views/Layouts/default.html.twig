@@ -1,8 +1,4 @@
-{% extends "WtsdaCoreBundle::base.html.twig" %}
-
-{% if includeSideBar is not defined %}
-    {% set includeSideBar = true %}
-{% endif %}
+{% extends "WtsdaCoreBundle:Layouts:base.html.twig" %}
 
 {% block head_title %}
     {% block head_title_tag_page %}{% endblock %}
@@ -26,7 +22,7 @@
             </a>
         </div>
         <div class="span8 text-right">
-            <h1 class="muted">WTSDA Region 1</h1>
+            <h1>WTSDA Region 1</h1>
             <p class="muted">
                 A proud member of the World Tang Soo Do Association<br />
                 <!-- Traditionalism. Professionalism. Brotherhood. <br /> -->
@@ -57,55 +53,28 @@
 
 {% block body_container_main %}
     {% block body_container_main_prepend %}{% endblock %}
-    {%  if not includeSideBar %}
-        {% set spanNum = 'span12' %}
-    {% else %}
-        {% set spanNum = 'span9' %}
-    {% endif %}
-    <div class="row-fluid">
-        <div class="{{ spanNum }}">
-            <div class="well well-small">
-                {% block leftWellContent %}{% endblock %}
-            </div>
-        </div>
-    {% if includeSideBar %}
-        <div class="span3 text-center">
-            <div class="well well-small">
-                <span class="label label-info" style="width:97%;">Scholarship Donations</span>
-                <p>
-                    <br/>
-                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
-                </p>
-
-                <span class="label label-info" style="width:97%;">Facebook Activity</span>
-                <p>
-                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
-                </p>
-
-                <span class="label label-info" style="width:97%;">Twitter Activity</span>
-                <p>
-                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
-                </p>
-
-            </div>
-        </div>
-    {% endif %}
-    </div>
+    {% block body_container_main_content %}{% endblock %}
     {% block body_container_main_append %}{% endblock %}
 {% endblock %}
 
 {% block body_container_footer %}
     <div class="row-fluid">
         <div class="span6 pull-left">
-            <a class="no-change" href="#">
+            <a class="no-change" href="/">
                 <strong>&copy; {{ "now"|date("Y") }} WTSDA Region 1</strong>
             </a> |
             <!--TODO: provide link or contact page -->
             <a class="no-change" href="#">Contact Us <i class="icon-envelope"></i></a>
             <br />
-            Regional Director: Master John Auer<br />
-            Phone: 541-672-6190<br />
-            Email: director@wtsda-region1.org<br />
+            <small>
+                <address>
+                    Regional Director: Master John Auer<br />
+                    795 Folsom Ave, Suite 600<br />
+                    San Francisco, CA 94107<br />
+                    <abbr title="Phone">P:</abbr> (541) 672-6190<br />
+                    <abbr title="Email">E:</abbr> <a href="mailto:director@wtsda-region1.org">director@wtsda-region1.org</a>
+                </address>
+            </small>
         </div>
         <div class="span6 text-right">
             <small><em>
