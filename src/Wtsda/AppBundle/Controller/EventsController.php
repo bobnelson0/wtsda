@@ -57,6 +57,26 @@ class EventsController extends CoreController
                 'registration' => array('status' => 'Closed', 'url' => '#')
             ),
             array(
+                'date' => '2013-03-21',
+                'time' => null,
+                'name' => 'Masters\'s Clinic',
+                'contact' => array('name' => 'WTSDA', 'phone' => null, 'email' => null),
+                'host' => 'WTSDA',
+                'location' => array('name' => 'University of North Alabama', 'address' => 'One Harrison Plaza, Florence, Alabama 35632'),
+                'description' => 'All the master together',
+                'registration' => array('status' => 'Closed', 'url' => '#')
+            ),
+            array(
+                'date' => '2013-05-24',
+                'time' => '5pm-10pm',
+                'name' => 'Region 1 Spring Dan Test',
+                'contact' => array('name' => 'Master John Auer', 'phone' => '5416726190', 'email' => 'jjauer@msn.com'),
+                'host' => 'Roseburg Martial Arts Academy',
+                'location' => array('name' => 'Umpqua Community College', 'address' => '1140 Umpqua College Rd, Roseburg, OR 97470'),
+                'description' => '2013 Spring cycle Dan test',
+                'registration' => array('status' => 'Closed', 'url' => '#')
+            ),
+            array(
                 'date' => '2013-05-25',
                 'time' => '8am-5pm',
                 'name' => 'Region 1 Championship',
@@ -69,11 +89,41 @@ class EventsController extends CoreController
             array(
                 'date' => '2013-07-27',
                 'time' => '9pm-4pm',
-                'name' => 'Region 1 Clinic',
+                'name' => 'Region 1 Advanced Gup/Dan Clinic',
                 'contact' => array('name' => 'Master Mark Taylor', 'phone' => '2066502034', 'email' => 'mwt@pugetsoundtangsoodo.com'),
                 'host' => 'Pugest Sound Tang Soo Do',
                 'location' => array('name' => 'Camp Long', 'address' => '5200 35th Ave SW, Seattle, WA 98126'),
                 'description' => 'Advanced belt clinic',
+                'registration' => array('status' => 'Open', 'url' => '#')
+            ),
+            array(
+                'date' => '2013-10-05',
+                'time' => '12am-5pm',
+                'name' => 'Region 1 Fall Dan Test',
+                'contact' => array('name' => 'Ms. Kristina Ohlson', 'phone' => '4156655511', 'email' => 'msohlson@gmail.com'),
+                'host' => 'Paresh Martial Arts',
+                'location' => array('name' => null, 'address' => 'San Franscico, CA'),
+                'description' => '2013 Fall cycle Dan test',
+                'registration' => array('status' => 'Open', 'url' => '#')
+            ),
+            array(
+                'date' => '2013-10-05',
+                'time' => '8am-12am',
+                'name' => 'Region 1 Dan Workout',
+                'contact' => array('name' => 'Ms. Kristina Ohlson', 'phone' => '4156655511', 'email' => 'msohlson@gmail.com'),
+                'host' => 'Paresh Martial Arts',
+                'location' => array('name' => null, 'address' => 'San Franscico, CA'),
+                'description' => 'Dan workout before the test',
+                'registration' => array('status' => 'Open', 'url' => '#')
+            ),
+            array(
+                'date' => '2013-11-02',
+                'time' => '9am-4pm',
+                'name' => 'Region 1 Dan/Gup Clinic',
+                'contact' => array('name' => 'Master Becky Rupp', 'phone' => '7079232886', 'email' => 'beckydhtsd@gmail.com'),
+                'host' => 'Dragon Heart Tang Soo Do',
+                'location' => array('name' => null, 'address' => 'Garberville, CA'),
+                'description' => 'Gup and Dan clinic',
                 'registration' => array('status' => 'Open', 'url' => '#')
             ),
         );

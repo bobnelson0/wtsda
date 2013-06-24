@@ -5,3 +5,19 @@ wtsda_app_index:
 wtsda_app_events:
     pattern: /events/
     defaults: { _controller: WtsdaAppBundle:Events:Index }
+
+wtsda_app_dojangs:
+    pattern: /dojangs/
+    defaults: { _controller: WtsdaAppBundle:Dojangs:Index }
+
+wtsda_app_scholarship:
+    pattern: /scholarship/
+    defaults: { _controller: WtsdaAppBundle:Scholarship:Index }
+
+wtsda_app_media:
+    pattern: /media/
+    defaults: { _controller: WtsdaAppBundle:Media:Index }
+
+wtsda_app_about:
+    pattern: /about/
+    defaults: { _controller: WtsdaAppBundle:About:Index }
