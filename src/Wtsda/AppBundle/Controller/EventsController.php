@@ -92,7 +92,7 @@ class EventsController extends CoreController
                 'name' => 'Region 1 Advanced Gup/Dan Clinic',
                 'contact' => array('name' => 'Master Mark Taylor', 'phone' => '2066502034', 'email' => 'mwt@pugetsoundtangsoodo.com'),
                 'host' => 'Pugest Sound Tang Soo Do',
-                'location' => array('name' => 'Camp Long', 'address' => '5200 35th Ave SW, Seattle, WA 98126'),
+                'location' => array('name' => 'Camp Long', 'address' => '5200 35th Ave SW, Seattle, WA 98116'),
                 'description' => 'Advanced belt clinic',
                 'registration' => array('status' => 'Open', 'url' => '#')
             ),
