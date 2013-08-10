@@ -1,7 +1,97 @@
-{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+{% extends "WtsdaAppBundle:Layouts:defaultNoSideBar.html.twig" %}
 
 {% set useMap = true %}
 
-{% block navActDojangs %} class="active"{% endblock %}
+{% block navActEvents %} class="active"{% endblock %}
 
 {% block head_title_tag_page %}Dojangs{% endblock %}
+
+{% block leftWellContent %}
+    <h3>Dojangs</h3>
+
+    <div class="row-fluid">
+    <div class="span7">
+        <div id="accordionDojangs" class="accordion">
+            {% for key, dojang in dojangs %}
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionDojangs" href="#collapse{{ key }}">
+                            {{ dojang.name }} | {{ dojang.instructor }}
+                        </a>
+                    </div>
+                    <div id="collapse{{ key }}" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <strong>Name:</strong>  {{ dojang.name }}<br />
+                                    <strong>Instructor</strong> {{ dojang.instructor }}<br />
+                                    <strong>Phone:</strong>  {{ dojang.phone }}<br />
+                                    {% if dojang.email is not empty %}
+                                        <strong>Email:</strong>
+                                        <a href="mailto:{{ dojang.email }}">{{ dojang.email }}</a><br />
+                                    {% endif %}
+                                    {% if dojang.website is not empty %}
+                                        <strong>Website:</strong>
+                                        <a href="{{ dojang.website }}">{{ dojang.website }}</a><br />
+                                    {% endif %}
+                                    <hr />
+                                    <strong>Address</strong>
+                                    <br />
+                                    <address>
+                                        {{ dojang.address }}
+                                    </address>
+                                </div>
+                                {#<div class="span6">
+                                <span class="pull-right">
+                                    <!-- <img data-src="holder.js/140x140" class="img-polaroid" alt="265x150" style="width: 265px; height: 150px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFC0lEQVR4Xu3XV0ukQRCF4TIgCAZUMIIJBQMKBvDWn64XillRVEyYLsScMevSDQ6mRc+O+8lY79ws61RNW6cevmmzjo6OnowXCXwxgSzAfDEpymICgAGClABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFgMGAlABgpLgoBgwGpAQAI8VFMWAwICUAGCkuigGDASkBwEhxUQwYDEgJAEaKi2LAYEBKADBSXBQDBgNSAoCR4qIYMBiQEgCMFBfFGQ/m7u7OxsbGLD8/37q7u99tdHt725aWlqyjo8MqKiri+wcHB7aysmI3NzdWUlJira2tlpeX9yUNSZ/3pV8qwaKMBnN6emqLi4t2cXFhpaWl78CE9ycnJ+3x8TEFJiAZGhqyoqIiq6qqipgCpPb29k9jT/q8T3+hHyjIWDD39/c2MDBglZWVtr+/b8XFxa/AhCfB6OhofHKcnZ2lwOzs7Nj8/Hzq/1NTU/H9/v5+29zcjE+exsZGq62tjf0PDw/W19dnOTk5337eD+w77SMzFszT05NdXl5aQUGBDQ4OWmFh4SswMzMzFtCE5U9PT6eArK+v29ramvX09MSvo7m5Odvd3Y1gcnNzLQA6Pj6OT6zDw0Pr6uqysrIy+1/npb3BhD8gY8G8zOktmI2NDQswwp3m+vo6omhra4tfPVtbW6/AzM7O2t7eXgrM7e2tjYyMWPi3rq7Ompub363kO89LeN9pH/crwYyPj1u4b7x9tbS0WHZ2ti0sLFhnZ6eVl5fHO875+XkEE17hqRUu0eGr6KN7Uah5Cyad89LeYMIf8CvBnJycxIWHV8CwurpqDQ0NVlNTE382PDz84aU3XI7D8q+urqy6ujo+jZqamqy+vv7VWt6C+dfzEt71txz3K8G8TCbcQ17eYcJ7f/uzenl5OSIJf4KHp8/ExES8EPf29sZL9fProzvT83vKed+ywYQ/5FeASTgz18cBxvX69eEBo2fmugMwrtevDw8YPTPXHYBxvX59eMDombnuAIzr9evDA0bPzHUHYFyvXx8eMHpmrjsA43r9+vCA0TNz3QEY1+vXhweMnpnrDsC4Xr8+PGD0zFx3AMb1+vXhAaNn5roDMK7Xrw8PGD0z1x2Acb1+fXjA6Jm57gCM6/XrwwNGz8x1B2Bcr18fHjB6Zq47AON6/frwgNEzc90BGNfr14cHjJ6Z6w7AuF6/Pjxg9MxcdwDG9fr14QGjZ+a6AzCu168PDxg9M9cdgHG9fn14wOiZue4AjOv168MDRs/MdQdgXK9fHx4wemauOwDjev368IDRM3PdARjX69eHB4yemesOwLhevz48YPTMXHcAxvX69eEBo2fmugMwrtevDw8YPTPXHYBxvX59eMDombnuAIzr9evDA0bPzHUHYFyvXx8eMHpmrjsA43r9+vCA0TNz3QEY1+vXhweMnpnrDsC4Xr8+PGD0zFx3AMb1+vXh/wBs3s6mncQfmwAAAABJRU5ErkJggg=="> -->
+                                    <a href="//maps.google.com/?q={{ dojang.address|url_encode }}" target="_blank">
+                                        <img src="//maps.googleapis.com/maps/api/staticmap?center={{ dojang.address|url_encode }}&zoom=12&size=300x150&maptype=roadmap&markers=color:blue%7C{{ dojang.address|url_encode }}&visual_refresh=true&sensor=false" />
+                                    </a>
+                                </span>
+                                </div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div id="mapCanvas" class="span5" style="height: 500px"></div>
+    </div>
+{% endblock %}
+
+{% block body_js_jquery_ready %}
+    //var myLatlng = new google.maps.LatLng(43.2165031433,-123.3417358398);
+    var myLatlng = new google.maps.LatLng(28.868729,-133.417969);
+    var mapOptions = {
+        zoom: 3,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map($('#mapCanvas')[0], mapOptions);
+
+    var mybounds = new google.maps.LatLngBounds();
+    var geocoder = new google.maps.Geocoder();
+    var marker = null;
+    {% for key, dojang in dojangs %}
+    setTimeout(function() {
+        geocoder.geocode( { 'address': '{{ dojang.address }}'}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    animation: google.maps.Animation.DROP,
+                });
+                mybounds.extend(marker.getPosition());
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }, {{ key * 500 }});
+    {% endfor %}
+    console.log(mybounds);
+    console.log(mybounds.getCenter());
+    //var center = mybounds.getCenter();
+    //map.setCenter(center);
+    //map.fitBounds(mybounds)
+{% endblock %}

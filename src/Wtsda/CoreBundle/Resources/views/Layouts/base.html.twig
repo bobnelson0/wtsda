@@ -27,6 +27,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     {% if useMap is defined and useMap == true %}
-        <script src="//maps.googleapis.com/maps/api/js?key={{ google_api_key }}&sensor=false" type="text/javascript"></script>
+        <script src="//maps.googleapis.com/maps/api/js?key={{ google_api_key }}&v=3.12&sensor=false"></script>
     {% endif %}
+    <script>
+        $(document).ready(function() {
+        {% block body_js_jquery_ready %}{% endblock %}
+        });
+    </script>
 {% endblock %}
