@@ -98,22 +98,22 @@ class EventsController extends CoreController
             ),
             array(
                 'date' => '2013-10-05',
-                'time' => '12am-5pm',
-                'name' => 'Region 1 Fall Dan Test',
+                'time' => '10am-11:30am',
+                'name' => 'Region 1 Dan Workout',
                 'contact' => array('name' => 'Ms. Kristina Ohlson', 'phone' => '4156655511', 'email' => 'msohlson@gmail.com'),
                 'host' => 'Paresh Martial Arts',
-                'location' => array('name' => null, 'address' => 'San Franscico, CA'),
-                'description' => '2013 Fall cycle Dan test',
+                'location' => array('name' => 'Grattan Elementary School', 'address' => '165 Grattan St, San Franscico, CA 94117'),
+                'description' => 'Dan workout before the test',
                 'registration' => array('status' => 'Open', 'url' => '#')
             ),
             array(
                 'date' => '2013-10-05',
-                'time' => '8am-12am',
-                'name' => 'Region 1 Dan Workout',
+                'time' => '12am-6pm',
+                'name' => 'Region 1 Fall Dan Test',
                 'contact' => array('name' => 'Ms. Kristina Ohlson', 'phone' => '4156655511', 'email' => 'msohlson@gmail.com'),
                 'host' => 'Paresh Martial Arts',
-                'location' => array('name' => null, 'address' => 'San Franscico, CA'),
-                'description' => 'Dan workout before the test',
+                'location' => array('name' => 'Grattan Elementary', 'address' => '165 Grattan St, San Franscico, CA 94117'),
+                'description' => '2013 Fall cycle Dan test',
                 'registration' => array('status' => 'Open', 'url' => '#')
             ),
             array(

@@ -25,4 +25,9 @@ class CoreController extends Controller
     {
         return $this->getDoctrine()->getRepository($entity);
     }
+
+    protected function translate($message)
+    {
+        return $this->get('translator')->trans($message);
+    }
 }

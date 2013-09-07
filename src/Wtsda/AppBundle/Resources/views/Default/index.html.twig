@@ -1,10 +1,10 @@
-{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+{% extends "WtsdaAppBundle:Layouts:defaultBlank.html.twig" %}
 
 {% block navActIndex %} class="active"{% endblock %}
 
 {% block head_title_tag_page %}Welcome{% endblock %}
 
-{% block body_container_main_prepend %}
+{% block body_container_main_content %}
     <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -13,34 +13,81 @@
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner" style="width:1000px; height: 200px;">
-            <div class="active item" style="background-image: url('http://www.visitingdc.com/images/seattle-skyline-picture.jpg'); background-size:1000px 200px; width:1000px; height: 200px;">
-                <div class="pull-right" style="margin-right:40px;">
-                <h1>Seattle Clinic</h1>
-                <p>Special guests Master Auer and Master Rupp</p>
-                <p>July 27th. Come Join us!</p>
+            <div class="active item" style="background-image: url('http://geektreks.com/wp-content/uploads/2013/02/11.jpg'); background-size:1000px 200px; width:1000px; height: 200px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1>San Francisco Clinic</h1>
+                    <p>Special guests Master Elmore, Master Rupp, and Mr. Cerceau</p>
+                    <p>Oct 5th, 2013. Come Join us!</p>
                     <br />
-                <p>
-                    <a class="btn btn-primary btn-large">
-                        Learn more
-                    </a>
-                </p>
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
                 </div>
             </div>
-            <div class="item"><img style="width: 1000px; height: 200px;" src="http://www.visitingdc.com/images/seattle-skyline-picture.jpg" /></div>
-            <div class="item"><img style="width: 1000px; height: 200px;" src="http://www.visitingdc.com/images/seattle-skyline-picture.jpg" /></div>
+            <div class="item" style="background-image: url('http://www.wtsda-region21.com/Resources/blackbelt.jpeg'); background-size:1000px 200px; width:1000px; height: 200px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1 style="color:white;">Fall Black Belt Test</h1>
+                    <p style="color:white;">Come support those testing for Black Belt</p>
+                    <p style="color:white;">October 5th. Good luck!</p>
+                    <br />
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('http://www.visitingdc.com/images/seattle-skyline-picture.jpg'); background-size:1000px 200px; width:1000px; height: 200px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1>Seattle Clinic</h1>
+                    <p>Special guests Master Auer and Master Rupp</p>
+                    <p>July 27th. Come Join us!</p>
+                    <br />
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
-{% endblock %}
-
-{% block leftWellContent %}
-    <h3>Some Announcement</h3>
-    <p>
-        Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger doner leberkas swine. Doner drumstick chicken, pig hamburger sirloin bresaola jerky ground round pork loin turkey. Tail tri-tip shank chicken swine. Pancetta beef spare ribs meatloaf pork loin ham hock pastrami shoulder tenderloin salami short ribs. Pancetta bacon pork shank rump prosciutto spare ribs shankle ribeye hamburger pig chicken. Tongue kielbasa tail meatloaf boudin doner pork belly sirloin hamburger turducken filet mignon.
-        Doner chicken sirloin meatball flank, spare ribs pig chuck fatback bresaola jerky tongue ham drumstick tri-tip. Tail shank corned beef meatloaf fatback kielbasa ham hock pancetta beef ribs tenderloin pork belly ribeye. Kielbasa boudin turducken, pancetta chicken chuck pork tenderloin strip steak. Pancetta ham tongue pig.
-    </p>
+    <div class="row-fluid tiles">
+        <div class="span3">
+            <div class="well well-small">
+                <h5>Updates</h5>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well well-small">
+                <h5>Facebook</h5>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well well-small">
+                <h5>Twitter</h5>
+                {# TODO: Dynamically embed html lang=LANG for twitter to detect #}
+                <a class="twitter-timeline" href="https://twitter.com/WTSDARegion1" data-widget-id="376125131824697345" data-chrome="noheader noborders transparent nofooter">Tweets by @WTSDARegion1</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well well-small">
+                <h5>Scholarship</h5>
+                <br />
+                <h6>Donate to the Scholarship Fund!</h6>
+                <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                <br />
+                <h6>Submit your scholarship application!</h6>
+                <a href="#">Click here</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 

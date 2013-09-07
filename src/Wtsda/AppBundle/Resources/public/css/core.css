@@ -95,6 +95,14 @@ body {
     margin: 7px 0;
 }
 
+#main .row-fluid div div.well {
+    min-height: 100%;
+}
+
+.tiles div div {
+    min-height: 275px;
+}
+
 /* Footer */
 #footer {
     border-top: 1px solid gray;
