@@ -18,9 +18,9 @@ app_scholarship:
     pattern: /scholarship/
     defaults: { _controller: WtsdaAppBundle:Scholarship:index }
 
-app_media:
-    pattern: /media/
-    defaults: { _controller: WtsdaAppBundle:Media:index }
+app_resources:
+    pattern: /resources/
+    defaults: { _controller: WtsdaAppBundle:Resources:index }
 
 app_about:
     pattern: /about/

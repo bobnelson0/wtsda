@@ -1,7 +1,7 @@
 # WTSDA App en_US
 
 #Navigation
-app.nav.index.text: Welcome
+app.nav.index.text: Home
 app.nav.index.title: Welcome to the WTSDA Region 1 Website
 
 app.nav.news.text: News
@@ -16,10 +16,17 @@ app.nav.dojangs.title: Visit one of the many schools in Region 1
 app.nav.scholarship.text: Scholarship
 app.nav.scholarship.title: Donate and get more information about the Region 1 Scholarship program
 
-app.nav.media.text: Media
-app.nav.media.title: Share photos and videos from Region 1
+app.nav.resources.text: Resources
+app.nav.resources.title: Videos, photos, and links for WTSDA Region 1
 
 app.nav.about.text: About
 app.nav.about.title: Learn about Region 1 and who we are
 
+#Page headers
+app.headers.news.text: Latest News And Updates
+app.headers.events.text: Upcoming Events
+app.headers.dojangs.text: Dojangs In Region 1
+app.headers.scholarship.text: Region 1 Scholarship Fund
+app.headers.resources.text: WTSDA Resources
+app.headers.about.text: About Region 1
 
