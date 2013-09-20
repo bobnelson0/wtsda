@@ -2,7 +2,7 @@
 
 {% block head_title %}
     {% block head_title_tag_page %}{% endblock %}
-    {% block head_title_tag_site %} | WTSDA Region 1{% endblock %}
+    {% block head_title_tag_site %} | {% trans %}app.title.site.text{% endtrans %}{% endblock %}
 {% endblock %}
 
 {% block head_css %}
@@ -13,25 +13,23 @@
 {% endblock %}
 
 {% block body_container_header %}
-    <!--TODO: Translate here -->
-    <!--TODO: fix styles to be external -->
     <div id="hContainer">
         <div class="row-fluid">
             <div class="span5">
-                <div style="float:left;">
+                <div class="logo">
                     <a href="http://www.worldtangsoodo.com/" target="_blank">
-                        <img style="width:80px; height: 80px;" src="{{ asset('bundles/wtsdaapp/images/logos/wtsda/wtsda_129x129.png') }}" />
+                        <img src="{{ asset('bundles/wtsdaapp/images/logos/wtsda/wtsda_129x129.png') }}" />
                     </a>
                 </div>
-                <div style="float:left; margin: 5px;auto auto 10px">
-                    <h4><a class="no-change" href="{{ path('app_index') }}">WTSDA Region 1</a></h4>
-                    <small><em>Covering WA, OR, HI, ID, NV, Northern CA</em></small>
+                <div class="siteHeaderText"">
+                    <h4><a class="no-change" href="{{ path('app_index') }}">{% trans %}app.header.title{% endtrans %}</a></h4>
+                    <small><em>{% trans %}app.header.subtitle{% endtrans %}</em></small>
                 </div>
             </div>
             <div class="span7">
-                <div style="text-align: right;">
+                <div class="login">
                     <small>
-                        <a href="#" style="color: white;">Login | Register</a>
+                        <a href="#">{% trans %}app.header.login{% endtrans %} | {% trans %}app.header.register{% endtrans %}</a>
                     </small>
                 </div>
                 <div id="siteNav">
@@ -39,21 +37,27 @@
                         <li{% block navActIndex %}{% endblock %}>
                             <a href="{{ path('app_index') }}" title="{% trans %}app.nav.index.title{% endtrans %}">
                                 {% trans %}app.nav.index.text{% endtrans %}</a></li>
+
                         <li{% block navActNews %}{% endblock %}>
                             <a href="{{ path('app_news') }}" title="{% trans %}app.nav.news.title{% endtrans %}">
                                 {% trans %}app.nav.news.text{% endtrans %}</a></li>
+
                         <li{% block navActEvents %}{% endblock %}>
                             <a href="{{ path('app_events') }}" title="{% trans %}app.nav.events.title{% endtrans %}">
                                 {% trans %}app.nav.events.text{% endtrans %}</a></li>
+
                         <li{% block navActDojangs %}{% endblock %}>
                             <a href="{{ path('app_dojangs') }}" title="{% trans %}app.nav.dojangs.title{% endtrans %}">
                                 {% trans %}app.nav.dojangs.text{% endtrans %}</a></li>
+
                         <li{% block navActScholarship %}{% endblock %}>
                             <a href="{{ path('app_scholarship') }}" title="{% trans %}app.nav.scholarship.title{% endtrans %}">
                                 {% trans %}app.nav.scholarship.text{% endtrans %}</a></li>
-                        <li{% block navActMedia %}{% endblock %}>
+
+                        <li{% block navActResources %}{% endblock %}>
                             <a href="{{ path('app_resources') }}" title="{% trans %}app.nav.resources.title{% endtrans %}">
                                 {% trans %}app.nav.resources.text{% endtrans %}</a></li>
+
                         <li{% block navActAbout %}{% endblock %}>
                             <a href="{{ path('app_about') }}" title="{% trans %}app.nav.about.title{% endtrans %}">
                                 {% trans %}app.nav.about.text{% endtrans %}</a></li>
@@ -74,23 +78,29 @@
     <div class="row-fluid">
         <div class="span6 pull-left">
             <a class="no-change" href="{{ path('app_index') }}">
-                <strong>&copy; {{ "now"|date("Y") }} WTSDA Region 1</strong>
+                <strong>&copy; {{ "now"|date("Y") }} {% trans %}app.wtsda.region.r1.title{% endtrans %}</strong>
             </a> |
-            <!--TODO: provide link or contact page -->
-            <a class="no-change" href="#">Contact Us <i class="icon-envelope"></i></a>
+            <a class="no-change" href="#">{% trans %}app.footer.contactus{% endtrans %} <i class="icon-envelope"></i></a>
             <br>
             <small>
                 <address>
-                    <strong>Regional Director:</strong> Master John Auer<br>
-                    <abbr title="Email">E:</abbr> <a href="mailto:director@wtsda-region1.org">director@wtsda-region1.org</a><br>
-                    <abbr title="Phone">P:</abbr> (541) 672-6190
+                    <strong>{% trans %}app.footer.regionaldirector{% endtrans %}</strong> {% trans %}app.person.rank.master{% endtrans %} John Auer<br>
+                    <abbr title="{% trans %}app.footer.email.full{% endtrans %}">{% trans %}app.footer.email.abbr{% endtrans %}:</abbr> <a href="mailto:director@wtsda-region1.org">director@wtsda-region1.org</a><br>
+                    <abbr title="{% trans %}app.footer.phone.full{% endtrans %}">{% trans %}app.footer.phone.abbr{% endtrans %}:</abbr> (541) 672-6190
                 </address>
             </small>
         </div>
-        <div class="span6 text-right">
+        <div class="span6 text-right disclaimer">
             <small>
-                <em style="font-size: 10px;">
-                    The information/content within the pages of the <a class="no-change" href="{{ path('app_index') }}">WTSDA Region1</a> web site is the sole property of the <a class="no-change" href="http://www.worldtangsoodo.com" target="_blank">World Tang Soo Do Association</a>. The images and information contained herein may not be reproduced without the express written permission of the <a class="no-change" href="http://www.worldtangsoodo.com" target="_blank">World Tang Soo Do Association</a>. The <a class="no-change" href="http://www.worldtangsoodo.com" target="_blank">World Tang Soo Do Association</a> is not responsible for the content of any information contained in <a class="no-change" href="{{ path('app_index') }}">WTSDA Region1</a> website.
+                <em>
+                    {{ 'app.footer.disclaimer' |
+                        trans(
+                            {
+                                '%regionalHrefStart%' : '<a class="no-change" href="'~path('app_index')~'">',
+                                '%wtsdaHrefStart%': '<a class="no-change" href="http://www.worldtangsoodo.com" target="_blank">',
+                                '%hrefEnd%' : '</a>'
+                            }) | raw
+                    }}
                 </em>
             </small>
         </div>

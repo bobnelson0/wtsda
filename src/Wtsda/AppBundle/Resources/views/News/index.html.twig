@@ -2,8 +2,20 @@
 
 {% block navActNews %} class="active"{% endblock %}
 
-{% block head_title_tag_page %}News{% endblock %}
+{% block head_title_tag_page %}{% trans %}app.title.news.text{% endtrans %}{% endblock %}
 
-{% block leftWellContent %}
-<h3>News</h3>
+{% block leftContent %}
+<h3>{% trans %}app.headers.news.text{% endtrans %}</h3>
+    <div class="well well-small">
+        <h4>Title goes here</h4>
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
+    <div class="well well-small">
+        <h4>Title goes here</h4>
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
+    <div class="well well-small">
+        <h4>Title goes here</h4>
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
 {% endblock %}

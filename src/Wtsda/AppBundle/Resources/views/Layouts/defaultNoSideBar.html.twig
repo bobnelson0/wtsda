@@ -1,11 +1,7 @@
 {% extends "WtsdaAppBundle:Layouts:default.html.twig" %}
 
 {% block body_container_main_content %}
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="content">
-                {% block leftWellContent %}{% endblock %}
-            </div>
-        </div>
+    <div class="content padding">
+        {% block leftContent %}{% endblock %}
     </div>
 {% endblock %}

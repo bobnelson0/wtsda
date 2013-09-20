@@ -2,18 +2,18 @@
 
 {% block navActIndex %} class="active"{% endblock %}
 
-{% block head_title_tag_page %}Welcome{% endblock %}
+{% block head_title_tag_page %}{% trans %}app.title.index.text{% endtrans %}{% endblock %}
 
 {% block body_container_main_content %}
-    <div id="myCarousel" class="carousel slide">
+    <div id="myCarousel" class="carousel slide content banner">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <!-- Carousel items -->
-        <div class="carousel-inner" style="width:1000px; height: 200px;">
-            <div class="active item" style="background-image: url('http://geektreks.com/wp-content/uploads/2013/02/11.jpg'); background-size:1000px 200px; width:1000px; height: 200px;">
+        <div class="carousel-inner" style="width:998px; height: 275px;">
+            <div class="active item" style="background-image: url('http://geektreks.com/wp-content/uploads/2013/02/11.jpg'); background-size:998px 275px; width:998px; height: 275px;">
                 <div class="pull-right" style="margin-right:70px; margin-top:15px;">
                     <h1>San Francisco Clinic</h1>
                     <p>Special guests Master Elmore, Master Rupp, and Mr. Cerceau</p>
@@ -26,7 +26,7 @@
                     </p>
                 </div>
             </div>
-            <div class="item" style="background-image: url('http://www.wtsda-region21.com/Resources/blackbelt.jpeg'); background-size:1000px 200px; width:1000px; height: 200px;">
+            <div class="item" style="background-image: url('http://www.wtsda-region21.com/Resources/blackbelt.jpeg'); background-size:998px 275px; width:998px; height: 275px;">
                 <div class="pull-right" style="margin-right:70px; margin-top:15px;">
                     <h1 style="color:white;">Fall Black Belt Test</h1>
                     <p style="color:white;">Come support those testing for Black Belt</p>
@@ -39,7 +39,7 @@
                     </p>
                 </div>
             </div>
-            <div class="item" style="background-image: url('http://www.visitingdc.com/images/seattle-skyline-picture.jpg'); background-size:1000px 200px; width:1000px; height: 200px;">
+            <div class="item" style="background-image: url('http://www.visitingdc.com/images/seattle-skyline-picture.jpg'); background-size:998px 275px; width:998px; height: 275px;">
                 <div class="pull-right" style="margin-right:70px; margin-top:15px;">
                     <h1>Seattle Clinic</h1>
                     <p>Special guests Master Auer and Master Rupp</p>
@@ -58,33 +58,54 @@
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
     <div class="row-fluid tiles">
-        <div class="span3">
-            <div class="well well-small">
-                <h5>Latest</h5>
+        <div class="span4">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.latest{% endtrans %}</h5>
+                <p>
+                    <ul>
+                        <li><a href="#">2013 Championships. Register Now!</a></li>
+                        <li><a href="#">Congrats to Master SoAndSo...</a></li>
+                        <li><a href="#">Student of the Year...</a></li>
+                        <li><a href="#">Don't forget to register for...</a></li>
+                        <li><a href="#">New regional Black belts...</a></li>
+                        <li><a href="#">What it takes to be a Master...</a></li>
+                        <li><a href="#">Black belt test soon...</a></li>
+                    </ul>
+                </p>
             </div>
         </div>
-        <div class="span3">
-            <div class="well well-small">
-                <h5>Facebook</h5>
+
+        <div class="span4">
+            <div class="tile" style="text-align: center;">
+                <h5>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h5>
+                <br>
+                <p>
+                    Join our mailing list
+                    <form>
+                        <input type="text" style="width: 80%;">
+                        <br>
+                        <button>Join</button>
+                    </form>
+                </p>
             </div>
         </div>
-        <div class="span3">
-            <div class="well well-small">
-                <h5>Twitter</h5>
-                {# TODO: Dynamically embed html lang=LANG for twitter to detect #}
-                <a class="twitter-timeline" href="https://twitter.com/WTSDARegion1" data-widget-id="376125131824697345" data-chrome="noheader noborders transparent nofooter">Tweets by @WTSDARegion1</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        {#<div class="span3">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.socialmedia{% endtrans %}</h5>
+                <p>CONTENT</p>
             </div>
-        </div>
-        <div class="span3">
-            <div class="well well-small">
-                <h5>Scholarship</h5>
-                <br />
-                <h6>Donate to the Scholarship Fund!</h6>
-                <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
-                <br />
-                <h6>Submit your scholarship application!</h6>
-                <a href="#">Click here</a>
+        </div>#}
+        <div class="span4">
+            <div class="tile" style="text-align: center;">
+                <h5>{% trans %}app.index.tiles.donate{% endtrans %}</h5>
+                <br>
+                <p>
+                    <p>Donate to the Scholarship Fund!</p>
+                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                    <br><br><br>
+                    <p>Submit your scholarship application!</p>
+                    <a href="#">Click here</a>
+                </p>
             </div>
         </div>
     </div>

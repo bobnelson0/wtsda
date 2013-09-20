@@ -4,10 +4,10 @@
 
 {% block navActEvents %} class="active"{% endblock %}
 
-{% block head_title_tag_page %}Events{% endblock %}
+{% block head_title_tag_page %}{% trans %}app.title.events.text{% endtrans %}{% endblock %}
 
-{% block leftWellContent %}
-    <h3>Upcoming Events</h3>
+{% block leftContent %}
+    <h3>{% trans %}app.headers.events.text{% endtrans %}</h3>
 
     <div id="accordionEvents" class="accordion">
         {% for key, event in events %}

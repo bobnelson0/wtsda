@@ -2,8 +2,9 @@
 
 {% block navActResources %} class="active"{% endblock %}
 
-{% block head_title_tag_page %}Resources{% endblock %}
+{% block head_title_tag_page %}{% trans %}app.title.resources.text{% endtrans %}{% endblock %}
 
-{% block leftWellContent %}
-<h3>Resources</h3>
+{% block leftContent %}
+<h3>{% trans %}app.headers.resources.text{% endtrans %}</h3>
+    <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
 {% endblock %}

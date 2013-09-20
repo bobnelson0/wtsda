@@ -1,37 +1,35 @@
 {% extends "WtsdaAppBundle:Layouts:default.html.twig" %}
 
 {% block body_container_main_content %}
-    <div class="row-fluid">
-        <div class="span9">
-            <div class="content">
-                {% block leftWellContent %}{% endblock %}
+    <div class="content padding">
+        <div class="row-fluid">
+            <div class="span9">
+                {% block leftContent %}{% endblock %}
             </div>
-        </div>
-        <div class="span3">
-            <div class="content">
-                <div class="well well-small">
-                    <h5>Donate</h5>
+            <div class="span3 sidebar pull-right tiles">
+                <div class="tile" style="text-align: center;">
+                    <h6>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h6>
+                    <br>
+                    <p>
+                        Join our mailing list
+                        <form>
+                            <input type="text" style="width: 80%;">
+                            <br>
+                            <button>Join</button>
+                        </form>
+                    </p>
                 </div>
-                <div class="well well-small">
-                    <h5>Stay Connected</h5>
+                <div class="tile" style="text-align: center;">
+                    <h6>{% trans %}app.index.tiles.donate{% endtrans %}</h6>
+                    <br>
+                    <p>
+                        <p>Donate to the Scholarship Fund!</p>
+                        <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                        <br><br>
+                        <p>Submit your scholarship application!</p>
+                        <a href="#">Click here</a>
+                    </p>
                 </div>
-
-               {# <span class="label label-info" style="width:97%;">Scholarship Donations</span>
-                <p>
-                    <br />
-                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
-                </p>
-
-                <span class="label label-info" style="width:97%;">Stay Connected</span>
-                <p>
-                    Bacon ipsum dolor sit amet filet mignon fatback meatball, chicken rump ham turducken ham hock shoulder meatloaf hamburger done
-                </p>
-
-                <span class="label label-info" style="width:97%;">Twitter Activity</span>
-                <a href="https://twitter.com/WTSDARegion1" class="twitter-follow-button" data-show-count="false">Follow @WTSDARegion1</a>
-                <a class="twitter-timeline" href="https://twitter.com/WTSDARegion1" data-widget-id="376125131824697345" data-chrome="noheader noborders transparent nofooter" height="200">Tweets by @WTSDARegion1</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>#}
-
             </div>
         </div>
     </div>
