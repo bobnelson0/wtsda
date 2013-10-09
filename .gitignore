@@ -4,6 +4,9 @@ app/logs/*
 app/bootstrap.php.cache
 web/phpunit
 
+#Vendor files
+vendor/*
+
 #IDE Files
 .idea
 
