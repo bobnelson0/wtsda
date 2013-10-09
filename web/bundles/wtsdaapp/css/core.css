@@ -10,9 +10,9 @@ a {
 
 /******************** Twitter Bootstrap mods ********************/
 #siteNav > .nav-pills > li > a {
-    -webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
-    border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
 
 .nav-pills > .active > a, .nav-pills > li > a:hover {
@@ -119,11 +119,7 @@ a {
 
 .content.padding {
     width: 981px;
-    padding: 15px 0 15px 15px;
-}
-
-.sidebar {
-    width: 225px;
+    padding: 20px 0 15px 15px;
 }
 
 .tiles .tile {
@@ -132,9 +128,9 @@ a {
     max-height: 230px;
     margin: 0 0 10px 0;
     background-color: white;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .tiles .tile h5 {
@@ -158,6 +154,10 @@ a {
     margin: 3px 8px;
 }
 
+.sidebar {
+    padding-top: 2px;
+}
+
 .sidebar.tiles .tile {
     margin: 5px 0 15px 0;
     border: 0;
@@ -166,7 +166,13 @@ a {
     border-left: 1px dashed #808080;
     min-height: 100px;
     max-height: 500px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
 }
+
+/******************** News ********************/
+
 
 /******************** Footer ********************/
 #footer {
@@ -178,7 +184,14 @@ a {
     font-size: 10px;
 }
 
-/******************** Helpers ********************/
+/******************** Global ********************/
 a.no-change {
     color: inherit;
+}
+
+hr.simple {
+    margin: 0 0 3px 0;
+    border: 0;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #eeeeee;
 }

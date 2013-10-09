@@ -84,9 +84,14 @@
             <br>
             <small>
                 <address>
-                    <strong>{% trans %}app.footer.regionaldirector{% endtrans %}</strong> {% trans %}app.person.rank.master{% endtrans %} John Auer<br>
-                    <abbr title="{% trans %}app.footer.email.full{% endtrans %}">{% trans %}app.footer.email.abbr{% endtrans %}:</abbr> <a href="mailto:director@wtsda-region1.org">director@wtsda-region1.org</a><br>
-                    <abbr title="{% trans %}app.footer.phone.full{% endtrans %}">{% trans %}app.footer.phone.abbr{% endtrans %}:</abbr> (541) 672-6190
+                    <strong>
+                        {% trans %}app.footer.regionaldirector{% endtrans %}:
+                    </strong> {% trans %}app.person.rank.master{% endtrans %} John Auer
+                    <br>
+                    <strong><abbr title="{% trans %}app.footer.email.full{% endtrans %}">{% trans %}app.footer.email.abbr{% endtrans %}</abbr></strong>: <a href="mailto:{% trans %}app.footer.contact.email{% endtrans %}">{% trans %}app.footer.contact.email{% endtrans %}</a>
+                    <br>
+                    <strong><abbr title="{% trans %}app.footer.phone.full{% endtrans %}">{% trans %}app.footer.phone.abbr{% endtrans %}
+                    </abbr></strong>: {% trans %}app.footer.contact.phone{% endtrans %}
                 </address>
             </small>
         </div>

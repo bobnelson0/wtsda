@@ -76,15 +76,16 @@
         </div>
 
         <div class="span4">
-            <div class="tile" style="text-align: center;">
+            <div class="tile">
                 <h5>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h5>
                 <br>
                 <p>
                     Join our mailing list
                     <form>
-                        <input type="text" style="width: 80%;">
-                        <br>
-                        <button>Join</button>
+                        <div class="input-append">
+                            <input class="span2" id="email" type="text">
+                            <button class="btn" type="button">{% trans %}app.forms.email.text{% endtrans %}</button>
+                        </div>
                     </form>
                 </p>
             </div>
@@ -96,15 +97,15 @@
             </div>
         </div>#}
         <div class="span4">
-            <div class="tile" style="text-align: center;">
+            <div class="tile">
                 <h5>{% trans %}app.index.tiles.donate{% endtrans %}</h5>
                 <br>
                 <p>
-                    <p>Donate to the Scholarship Fund!</p>
-                    <img id="previewImage" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="Preview Image">
+                    <p>{% trans %}app.donate.tagline{% endtrans %}</p>
+                    {{ 'app.donate.paypal.code' | trans | raw }}
                     <br><br><br>
-                    <p>Submit your scholarship application!</p>
-                    <a href="#">Click here</a>
+                    <p>{% trans %}app.donate.application.link{% endtrans %}</p>
+                    <a href="#">{% trans %}app.link.clickhere{% endtrans %}</a>
                 </p>
             </div>
         </div>
