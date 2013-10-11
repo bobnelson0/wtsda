@@ -10,16 +10,18 @@
 {% block head_js %}{% endblock %}
 
 {% block body_container %}
-<div id="header">
-{% block body_container_header %}{% endblock %}
-</div>
+<div id="container">
+    <div id="header">
+    {% block body_container_header %}{% endblock %}
+    </div>
 
-<div id="main">
-{% block body_container_main %}{% endblock %}
-</div>
+    <div id="main">
+    {% block body_container_main %}{% endblock %}
+    </div>
 
-<div id="footer">
-{% block body_container_footer %}{% endblock %}
+    <div id="footer">
+    {% block body_container_footer %}{% endblock %}
+    </div>
 </div>
 {% endblock %}
 

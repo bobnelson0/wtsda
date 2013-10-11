@@ -163,7 +163,7 @@ class DojangsController extends CoreController
             array(
                 'name' => 'Roseburg Martial Arts Academy',
                 'instructor' => 'Master John Auer',
-                'address' => '1523 NE Vine Streer, Roseburg, OR 97470',
+                'address' => '1523 NE Vine Street, Roseburg, OR 97470',
                 'phone' => '541-672-6190',
                 'email' => 'RoseburgMartialArts@msn.com',
                 'website' => 'http://www.roseburgmartialarts.com/',

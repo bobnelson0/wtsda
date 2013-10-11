@@ -9,23 +9,21 @@
             <div class="span3 sidebar pull-right tiles">
                 <div class="tile" style="text-align: center;">
                     <h6>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h6>
-                    <br>
                     <p>
                         Join our mailing list
                         <form>
-                            <input type="text" style="width: 80%;">
-                            <br>
-                            <button>Join</button>
+                            <div class="input-append">
+                                <input class="span7" id="email" type="text" placeholder="Email">
+                                <button class="btn" type="button">Join!</button>
+                            </div>
                         </form>
                     </p>
                 </div>
                 <div class="tile" style="text-align: center;">
                     <h6>{% trans %}app.index.tiles.donate{% endtrans %}</h6>
-                    <br>
                     <p>
                         <p>{% trans %}app.donate.tagline{% endtrans %}</p>
                         {{ 'app.donate.paypal.code' | trans | raw }}
-                        <br>
                         <p>{% trans %}app.donate.application.link{% endtrans %}</p>
                         <a href="#">{% trans %}app.link.clickhere{% endtrans %}</a>
                     </p>

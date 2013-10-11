@@ -8,6 +8,10 @@ a {
     color: #003753;
 }
 
+hr {
+
+}
+
 /******************** Twitter Bootstrap mods ********************/
 #siteNav > .nav-pills > li > a {
     -webkit-border-radius: 4px 4px 0 0;
@@ -37,6 +41,9 @@ a {
     border-radius: 4px;
 }
 
+/* This fixes issue with infoWindow rendering */
+img { max-width : none }
+
 /******************** Header ********************/
 #header {
     color: #fff;
@@ -49,13 +56,15 @@ a {
 #hContainer {
     margin: 0 auto;
     max-width: 1000px;
+    padding-right: 1px;
 }
 
 #siteNav {
     position: relative;
     top: 14px;
-    right: -14px;
+    right:-1px;
     font-weight: bold;
+    float: right;
 }
 
 .logo {
@@ -102,6 +111,13 @@ a {
 
 #main .row-fluid div div.well {
     min-height: 100%;
+}
+
+h3.pageTitle {
+    border-bottom: 1px solid #808080;
+    margin-top: 10px;
+    margin-bottom: 14px;
+    line-height: 18px;
 }
 
 .content {
