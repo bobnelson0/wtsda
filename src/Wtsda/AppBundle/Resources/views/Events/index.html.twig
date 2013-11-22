@@ -11,10 +11,28 @@
     <div id="accordionEvents" class="accordion">
         {% for key, event in events %}
         <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="#collapse{{ key }}">
-                    {{ event.date|date("m-d-Y")}} | {{ event.name }}
-                </a>
+            <div class="accordion-heading" onclick="$('a[href=#collapse{{ key }}]').click();">
+                <div style="display: inline-block;width:17%;border-right:1px solid #eee;">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="#collapse{{ key }}">
+                        <b>{{ event.date|date("M d, Y")}}</b>
+                    </a>
+                </div>
+                <div style="display: inline-block;width:60%;">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="#collapse{{ key }}">
+                        {{ event.name }}
+                    </a>
+                </div>
+                <div style="display: inline-block;text-align:right;width:20%;">
+                        {% if event.registration.active == 'true' %}
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="{{ event.registration.url }}">
+                                <b>{{ event.registration.label }}</b>...
+                            </a>
+                        {% else %}
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionEvents" href="#collapse{{ key }}">
+                                More...
+                            </a>
+                        {% endif %}
+                </div>
             </div>
             <div id="collapse{{ key }}" class="accordion-body collapse">
                 <div class="accordion-inner">

@@ -13,6 +13,12 @@ class EventsController extends CoreController
         return $this->_render('WtsdaAppBundle:Events:index', array('events' => $events));
     }
 
+    public function region1Champs2014Action()
+    {
+        $events = $this->get2014Events();
+        return $this->_render('WtsdaAppBundle:Events:region1Champs2014', array('events' => $events));
+    }
+
     protected function get2014Events()
     {
         $events = array(
@@ -24,7 +30,8 @@ class EventsController extends CoreController
                 'host' => 'Roseburg Martial Arts Academy',
                 'location' => array('name' => 'Roseburg Martial Arts Academy', 'address' => '1523 NE Vine St, Roseburg, OR 97470'),
                 'description' => 'Judging clinic in Roseburg, OR',
-                'registration' => array('status' => 'Closed', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-01-25',
@@ -34,7 +41,8 @@ class EventsController extends CoreController
                 'host' => 'Fitness Fanatics',
                 'location' => array('name' => null, 'address' => 'Santa Rosa, CA'),
                 'description' => 'Judging clinic in Santa Rosa',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-02-01',
@@ -44,7 +52,8 @@ class EventsController extends CoreController
                 'host' => 'Evergreen Tang Soo Do Academy',
                 'location' => array('name' => 'Evergreen Tang Soo Do Academy', 'address' => '2707 California Ave SW, Seattle, WA 98116'),
                 'description' => 'Judging clinic in Seattle, WA',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-02-01',
@@ -54,7 +63,8 @@ class EventsController extends CoreController
                 'host' => 'TEAM Martial Arts',
                 'location' => array('name' => null, 'address' => 'Reno, NV'),
                 'description' => 'Judging clinic in Nevada',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-03-20',
@@ -64,7 +74,8 @@ class EventsController extends CoreController
                 'host' => 'WTSDA',
                 'location' => array('name' => 'University of North Alabama', 'address' => 'One Harrison Plaza, Florence, Alabama 35632'),
                 'description' => 'All the master together',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-05-23',
@@ -74,7 +85,8 @@ class EventsController extends CoreController
                 'host' => 'Paresh Martial Arts',
                 'location' => array('name' => 'TBA', 'address' => 'San Fransisco, CA'),
                 'description' => '2014 Spring cycle Dan test',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-05-24',
@@ -84,7 +96,8 @@ class EventsController extends CoreController
                 'host' => 'Paresh Martial Arts',
                 'location' => array('name' => 'TBA', 'address' => 'San Fransisco, CA'),
                 'description' => 'Annual Region 1 Championship',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register'),
+                'important' => true
             ),
             array(
                 'date' => '2014-07-18',
@@ -94,7 +107,8 @@ class EventsController extends CoreController
                 'host' => 'World Tang Soo Do Association',
                 'location' => array('name' => 'Greensboro Coliseum Complex', 'address' => '1921 W Lee St, Greensboro, NC 27403'),
                 'description' => 'World Tang Soo Do Association World Championship',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register'),
+                'important' => true
             ),
             array(
                 'date' => '2014-08-16',
@@ -104,7 +118,8 @@ class EventsController extends CoreController
                 'host' => 'Pugest Sound Tang Soo Do',
                 'location' => array('name' => 'Camp Long', 'address' => '5200 35th Ave SW, Seattle, WA 98116'),
                 'description' => 'Seattle area clinic',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-09-26',
@@ -114,7 +129,8 @@ class EventsController extends CoreController
                 'host' => 'Tahoe City Martial Arts Academy',
                 'location' => array('name' => null, 'address' => 'Tahoe City, CA'),
                 'description' => 'Ki Gong Clinic',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-10-04',
@@ -124,7 +140,8 @@ class EventsController extends CoreController
                 'host' => 'Evergreen Tang Soo Do Academy',
                 'location' => array('name' => 'TBA', 'address' => 'Seattle, WA'),
                 'description' => 'Dan workout before the test',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
             array(
                 'date' => '2014-10-04',
@@ -134,7 +151,8 @@ class EventsController extends CoreController
                 'host' => 'Evergreen Tang Soo Do Academy',
                 'location' => array('name' => 'TBA', 'address' => 'Seattle, WA'),
                 'description' => '2014 Fall cycle Dan test',
-                'registration' => array('status' => 'Open', 'url' => '#')
+                'registration' => array('active' => false, 'url' => '#', 'label' => 'Register Now!'),
+                'important' => false
             ),
         );
         return $events;

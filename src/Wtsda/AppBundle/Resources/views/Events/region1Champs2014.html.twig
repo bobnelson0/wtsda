@@ -1,0 +1,72 @@
+{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+
+{% set useMap = true %}
+
+{% block navActEvents %} class="active"{% endblock %}
+
+{% block head_title_tag_page %}{% trans %}app.title.events.text{% endtrans %} - 2014 Championship{% endblock %}
+
+{% block leftContent %}
+    <h3 class="pageTitle">2014 Region 1 Championships</h3>
+
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#champs" data-toggle="tab">Championship</a></li>
+            <li><a href="#bbtest" data-toggle="tab">Black Belt Test</a></li>
+            <li><a href="#accomodations" data-toggle="tab">Accomodations</a></li>
+            <li><a href="#register" data-toggle="tab"><b>Register Now!</b></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="champs">
+                <p>CHAMPS</p>
+            </div>
+            <div class="tab-pane" id="bbtest">
+                <p>BLACK BELT TEST</p>
+            </div>
+            <div class="tab-pane" id="accomodations">
+                <p>ACCOMODATIONS</p>
+            </div>
+            <div class="tab-pane" id="register">
+
+                <form class="form-horizontal">
+                    <div class="control-group" style="display:inline-block">
+
+                        <label class="control-label" for="compName">Name:</label>
+                        <div class="controls">
+                            <input type="text" id="compName" placeholder="Full Name">
+                        </div>
+
+                        <label class="control-label" for="assocNum">Association #:</label>
+                        <div class="controls">
+                            <input type="text" id="assocNum" placeholder="######">
+                        </div>
+
+                        <label class="control-label" for="studioName">Studio Name:</label>
+                        <div class="controls">
+                            <input type="text" id="studioName" placeholder="Studio Name">
+                        </div>
+
+                        <label class="control-label" for="dob">Date of Birth</label>
+                        <div class="controls">
+                            <input type="text" id="dob" placeholder="## / ## / ####">
+                        </div>
+
+
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <button type="submit" class="btn">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

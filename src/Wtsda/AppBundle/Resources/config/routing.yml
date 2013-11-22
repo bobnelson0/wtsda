@@ -25,3 +25,7 @@ app_resources:
 app_about:
     pattern: /about/
     defaults: { _controller: WtsdaAppBundle:About:index }
+
+app_events_region1Champs2014:
+  pattern: /events/r2014Championship/
+  defaults: { _controller: WtsdaAppBundle:Events:region1Champs2014 }
