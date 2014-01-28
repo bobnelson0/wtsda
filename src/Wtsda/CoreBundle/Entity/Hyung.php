@@ -29,15 +29,14 @@ class Hyung
     protected $type;
 
     /**
-     * @ORM\Column(name="`order`", type="integer")
+     * @ORM\Column(type="integer")
      */
-    protected $order;
-
+    protected $ord;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -68,26 +67,29 @@ class Hyung
     }
 
     /**
-     * Set order
+     * Set ord
      *
-     * @param integer $order
+     * @param int $ord
+     * @throws \InvalidArgumentException if $ord is not an integer
      * @return Hyung
      */
-    public function setOrder($order)
+    public function setOrd($ord)
     {
-        $this->order = $order;
-
+        if(!is_int($ord)) {
+            throw new \InvalidArgumentException;
+        }
+        $this->ord = $ord;
         return $this;
     }
 
     /**
-     * Get order
+     * Get ord
      *
      * @return integer 
      */
-    public function getOrder()
+    public function getOrd()
     {
-        return $this->order;
+        return $this->ord;
     }
 
     /**
@@ -99,7 +101,6 @@ class Hyung
     public function setType(\Wtsda\CoreBundle\Entity\HyungType $type = null)
     {
         $this->type = $type;
-
         return $this;
     }
 

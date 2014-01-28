@@ -3,14 +3,12 @@
 namespace Wtsda\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Wtsda\CoreBundle\Entity\Permission;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Roles")
+ * @ORM\Table(name="Regions")
  */
-class Role
+class Region
 {
     /**
      * @ORM\Id
@@ -20,9 +18,9 @@ class Role
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="integer")
      */
-    protected $name;
+    protected $number;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -35,33 +33,22 @@ class Role
     protected $ord;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Permission", inversedBy="roles")
-     * @ORM\JoinTable(name="RolePermissions")
+     * @ORM\OneToMany(targetEntity="Dojang", mappedBy="region")
      */
-    protected $permissions;
+    protected $dojangs;
 
-    /*
-    public function setOrd($ord)
-    {
-        if(!is_int($ord)) {
-            throw new \InvalidArgumentException;
-        }
-        $this->ord = $ord;
-        return $this;
-    }
-    */
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->permissions = new ArrayCollection();
+        $this->dojangs = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,33 +56,36 @@ class Role
     }
 
     /**
-     * Set name
+     * Set number
      *
-     * @param string $name
-     * @return Role
+     * @param string $number
+     * @throws \InvalidArgumentException if $number is not an integer
+     * @return Region
      */
-    public function setName($name)
+    public function setNumber($number)
     {
-        $this->name = $name;
-
+        if(!is_int($number)) {
+            throw new \InvalidArgumentException;
+        }
+        $this->number = $number;
         return $this;
     }
 
     /**
-     * Get name
+     * Get number
      *
-     * @return string 
+     * @return integer
      */
-    public function getName()
+    public function getNumber()
     {
-        return $this->name;
+        return $this->number;
     }
 
     /**
      * Set description
      *
      * @param string $description
-     * @return Role
+     * @return Region
      */
     public function setDescription($description)
     {
@@ -106,7 +96,7 @@ class Role
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -118,7 +108,7 @@ class Role
      *
      * @param int $ord
      * @throws \InvalidArgumentException if $ord is not an integer
-     * @return Role
+     * @return Region
      */
     public function setOrd($ord)
     {
@@ -132,7 +122,7 @@ class Role
     /**
      * Get ord
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrd()
     {
@@ -140,34 +130,34 @@ class Role
     }
 
     /**
-     * Add permissions
+     * Add dojangs
      *
-     * @param \Wtsda\CoreBundle\Entity\Permission $permissions
-     * @return Role
+     * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
+     * @return address
      */
-    public function addPermission(Permission $permissions)
+    public function addHyung(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
     {
-        $this->permissions[] = $permissions;
+        $this->dojangs[] = $dojangs;
         return $this;
     }
 
     /**
-     * Remove permissions
+     * Remove dojangs
      *
-     * @param \Wtsda\CoreBundle\Entity\Permission $permissions
+     * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
      */
-    public function removePermission(Permission $permissions)
+    public function removeHyung(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
     {
-        $this->permissions->removeElement($permissions);
+        $this->dojangs->removeElement($dojangs);
     }
 
     /**
-     * Get permissions
+     * Get dojangs
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPermissions()
+    public function getDojangs()
     {
-        return $this->permissions;
+        return $this->dojangs;
     }
 }

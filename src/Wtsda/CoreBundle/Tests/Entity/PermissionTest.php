@@ -10,6 +10,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue(true);
     }
+
     /*public function testGetIdReturnsNullAfterConstruction()
     {
         $perm = new Permission();

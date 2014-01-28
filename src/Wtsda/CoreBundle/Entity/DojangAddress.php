@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Addresses")
+ * @ORM\Table(name="DojangAddresses")
  */
-class Address
+class DojangAddress
 {
     /**
      * @ORM\Id
@@ -76,4 +76,33 @@ class Address
      * @ORM\Column(type="decimal", precision=18, scale=12, nullable=true)
      */
     protected $longitude;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Dojang", inversedBy="addresses")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     **/
+    protected $dojang;
+
+    /**
+     * Set dojang
+     *
+     * @param \Wtsda\CoreBundle\Entity\Dojang $dojang
+     * @return DojangAddress
+     */
+    public function setDojang(\Wtsda\CoreBundle\Entity\Dojang $dojang = null)
+    {
+        $this->dojang = $dojang;
+        return $this;
+    }
+
+    /**
+     * Get dojang
+     *
+     * @return \Wtsda\CoreBundle\Entity\Dojang
+     */
+    public function getDojang()
+    {
+        return $this->dojang;
+    }
+
 }

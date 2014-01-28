@@ -23,9 +23,9 @@ class RankGroup
     protected $name;
 
     /**
-     * @ORM\Column(name="`order`", type="integer")
+     * @ORM\Column(type="integer")
      */
-    protected $order;
+    protected $ord;
 
     /**
      * @ORM\OneToMany(targetEntity="Rank", mappedBy="rankGroup")
@@ -59,7 +59,6 @@ class RankGroup
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -74,26 +73,29 @@ class RankGroup
     }
 
     /**
-     * Set order
+     * Set ord
      *
-     * @param integer $order
+     * @param int $ord
+     * @throws \InvalidArgumentException if $ord is not an integer
      * @return RankGroup
      */
-    public function setOrder($order)
+    public function setOrd($ord)
     {
-        $this->order = $order;
-
+        if(!is_int($ord)) {
+            throw new \InvalidArgumentException;
+        }
+        $this->ord = $ord;
         return $this;
     }
 
     /**
-     * Get order
+     * Get ord
      *
      * @return integer 
      */
-    public function getOrder()
+    public function getOrd()
     {
-        return $this->order;
+        return $this->ord;
     }
 
     /**
@@ -105,7 +107,6 @@ class RankGroup
     public function addRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
     {
         $this->ranks[] = $ranks;
-
         return $this;
     }
 

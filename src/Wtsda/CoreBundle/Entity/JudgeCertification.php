@@ -23,9 +23,9 @@ class JudgeCertification
     protected $name;
 
     /**
-     * @ORM\Column(name="`order`", type="integer")
+     * @ORM\Column(type="integer")
      */
-    protected $order;
+    protected $ord;
 
     /**
      * Get id
@@ -60,28 +60,28 @@ class JudgeCertification
     }
 
     /**
-     * Set order
+     * Set ord
      *
-     * @param int $order
-     * @throws \InvalidArgumentException if $order is not an integer
+     * @param int $ord
+     * @throws \InvalidArgumentException if $ord is not an integer
      * @return JudgeCertification
      */
-    public function setOrder($order)
+    public function setOrd($ord)
     {
-        if(!is_int($order)) {
+        if(!is_int($ord)) {
             throw new \InvalidArgumentException;
         }
-        $this->order = $order;
+        $this->ord = $ord;
         return $this;
     }
 
     /**
-     * Get order
+     * Get ord
      *
      * @return integer
      */
-    public function getOrder()
+    public function getOrd()
     {
-        return $this->order;
+        return $this->ord;
     }
 }

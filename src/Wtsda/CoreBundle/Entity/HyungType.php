@@ -56,7 +56,6 @@ class HyungType {
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -79,7 +78,6 @@ class HyungType {
     public function addHyung(\Wtsda\CoreBundle\Entity\Hyung $hyungs)
     {
         $this->hyungs[] = $hyungs;
-
         return $this;
     }
 

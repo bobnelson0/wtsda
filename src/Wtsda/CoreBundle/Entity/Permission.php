@@ -81,7 +81,6 @@ class Permission
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -104,7 +103,6 @@ class Permission
     public function addRole(\Wtsda\CoreBundle\Entity\Role $roles)
     {
         $this->roles[] = $roles;
-
         return $this;
     }
 
