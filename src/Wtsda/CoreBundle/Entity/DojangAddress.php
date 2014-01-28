@@ -1,5 +1,5 @@
 <?php
-
+/** TODO: change class to reflect google maps: https://developers.google.com/maps/documentation/geocoding/#Results */
 namespace Wtsda\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -84,6 +84,148 @@ class DojangAddress
     protected $dojang;
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return string
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set addressLine1
+     *
+     * @param string $addressLine1
+     * @return string
+     */
+    public function setAddressLine1($addressLine1)
+    {
+        $this->addressLine1 = $addressLine1;
+        return $this;
+    }
+
+    /**
+     * Get addressLine1
+     *
+     * @return string
+     */
+    public function getAddressLine1()
+    {
+        return $this->addressLine1;
+    }
+
+    /**
+     * Set addressLine2
+     *
+     * @param string $addressLine2
+     * @return string
+     */
+    public function setAddressLine2($addressLine2)
+    {
+        $this->addressLine2 = $addressLine2;
+        return $this;
+    }
+
+    /**
+     * Get addressLine2
+     *
+     * @return string
+     */
+    public function getAddressLine2()
+    {
+        return $this->addressLine2;
+    }
+
+    /**
+     * Set locality
+     *
+     * @param string $locality
+     * @return string
+     */
+    public function setLocality($locality)
+    {
+        $this->locality = $locality;
+        return $this;
+    }
+
+    /**
+     * Get locality
+     *
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->locality;
+    }
+
+    /**
+     * Set neighborhood
+     *
+     * @param string $neighborhood
+     * @return string
+     */
+    public function setNeighborhood($neighborhood)
+    {
+        $this->neighborhood = $neighborhood;
+        return $this;
+    }
+
+    /**
+     * Get neighborhood
+     *
+     * @return string
+     */
+    public function getNeighborhood()
+    {
+        return $this->neighborhood;
+    }
+
+    /**
+     * Set adminDistrict
+     *
+     * @param string $adminDistrict
+     * @return string
+     */
+    public function setAdminDistrict($adminDistrict)
+    {
+        $this->adminDistrict = $adminDistrict;
+        return $this;
+    }
+
+    /**
+     * Get neighborhood
+     *
+     * @return string
+     */
+    public function getAdminDistrict()
+    {
+        return $this->adminDistrict;
+    }
+
+    /**
      * Set dojang
      *
      * @param \Wtsda\CoreBundle\Entity\Dojang $dojang
@@ -104,5 +246,4 @@ class DojangAddress
     {
         return $this->dojang;
     }
-
 }

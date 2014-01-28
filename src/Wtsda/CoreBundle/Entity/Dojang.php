@@ -55,6 +55,7 @@ class Dojang
     {
         return $this->id;
     }
+
     /**
      * Set name
      *
@@ -105,7 +106,7 @@ class Dojang
      * @param \Wtsda\CoreBundle\Entity\Region $region
      * @return Region
      */
-    public function setType(\Wtsda\CoreBundle\Entity\Region $region = null)
+    public function setRegion(\Wtsda\CoreBundle\Entity\Region $region = null)
     {
         $this->region = $region;
         return $this;
@@ -127,7 +128,7 @@ class Dojang
      * @param \Wtsda\CoreBundle\Entity\DojangAddress $addresses
      * @return address
      */
-    public function addHyung(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
+    public function addAddress(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
     {
         $this->addresses[] = $addresses;
         return $this;
@@ -138,7 +139,7 @@ class Dojang
      *
      * @param \Wtsda\CoreBundle\Entity\DojangAddress $addresses
      */
-    public function removeHyung(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
+    public function removeAddress(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
     {
         $this->addresses->removeElement($addresses);
     }

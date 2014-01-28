@@ -135,7 +135,7 @@ class Region
      * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
      * @return address
      */
-    public function addHyung(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
+    public function addDojang(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
     {
         $this->dojangs[] = $dojangs;
         return $this;
@@ -146,7 +146,7 @@ class Region
      *
      * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
      */
-    public function removeHyung(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
+    public function removeDojang(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
     {
         $this->dojangs->removeElement($dojangs);
     }
