@@ -36,10 +36,10 @@ class ProfileEmailAddress extends MappedSuperClass\EmailAddress
     /**
      * Set profile
      *
-     * @param \Wtsda\CoreBundle\Entity\Profile $profile
+     * @param Profile $profile
      * @return ProfileEmailAddress
      */
-    public function setProfile(\Wtsda\CoreBundle\Entity\Profile $profile = null)
+    public function setProfile(Profile $profile = null)
     {
         $this->profile = $profile;
         return $this;
@@ -48,7 +48,7 @@ class ProfileEmailAddress extends MappedSuperClass\EmailAddress
     /**
      * Get profile
      *
-     * @return \Wtsda\CoreBundle\Entity\Profile
+     * @return Profile
      */
     public function getProfile()
     {

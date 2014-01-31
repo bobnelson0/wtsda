@@ -18,7 +18,7 @@ class InstructorCertification
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, unique=true)
      */
     protected $name;
 

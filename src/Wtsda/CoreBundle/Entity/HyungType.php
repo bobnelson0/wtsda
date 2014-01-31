@@ -2,8 +2,8 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 use Wtsda\CoreBundle\Entity\Hyung;
 
 /**
@@ -20,7 +20,7 @@ class HyungType {
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, unique=true)
      */
     protected $name;
 
@@ -34,7 +34,7 @@ class HyungType {
      */
     public function __construct()
     {
-        $this->hyungs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->hyungs = new ArrayCollection();
     }
 
     /**
@@ -72,10 +72,10 @@ class HyungType {
     /**
      * Add hyungs
      *
-     * @param \Wtsda\CoreBundle\Entity\Hyung $hyungs
+     * @param Hyung $hyungs
      * @return HyungType
      */
-    public function addHyung(\Wtsda\CoreBundle\Entity\Hyung $hyungs)
+    public function addHyung(Hyung $hyungs)
     {
         $this->hyungs[] = $hyungs;
         return $this;
@@ -84,10 +84,10 @@ class HyungType {
     /**
      * Remove hyungs
      *
-     * @param \Wtsda\CoreBundle\Entity\Hyung $hyungs
+     * @param Hyung $hyungs
      * @return HyungType
      */
-    public function removeHyung(\Wtsda\CoreBundle\Entity\Hyung $hyungs)
+    public function removeHyung(Hyung $hyungs)
     {
         $this->hyungs->removeElement($hyungs);
         return $this;

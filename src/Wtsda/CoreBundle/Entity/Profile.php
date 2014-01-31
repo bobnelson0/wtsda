@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -78,7 +79,7 @@ class Profile
      */
     public function __construct()
     {
-        $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->addresses = new ArrayCollection();
     }
 
     /**
@@ -110,10 +111,10 @@ class Profile
     /**
      * Add addresses
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfileAddress $addresses
+     * @param ProfileAddress $addresses
      * @return address
      */
-    public function addAddress(\Wtsda\CoreBundle\Entity\ProfileAddress $addresses)
+    public function addAddress(ProfileAddress $addresses)
     {
         $this->addresses[] = $addresses;
         return $this;
@@ -122,10 +123,10 @@ class Profile
     /**
      * Remove addresses
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfileAddress $addresses
+     * @param ProfileAddress $addresses
      * @return Profile
      */
-    public function removeAddress(\Wtsda\CoreBundle\Entity\ProfileAddress $addresses)
+    public function removeAddress(ProfileAddress $addresses)
     {
         $this->addresses->removeElement($addresses);
         return $this;
@@ -144,10 +145,10 @@ class Profile
     /**
      * Add phoneNumbers
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfilePhoneNumber $phoneNumbers
+     * @param ProfilePhoneNumber $phoneNumbers
      * @return Profile
      */
-    public function addPhoneNumber(\Wtsda\CoreBundle\Entity\ProfilePhoneNumber $phoneNumbers)
+    public function addPhoneNumber(ProfilePhoneNumber $phoneNumbers)
     {
         $this->phoneNumbers[] = $phoneNumbers;
         return $this;
@@ -156,10 +157,10 @@ class Profile
     /**
      * Remove phoneNumbers
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfilePhoneNumber $phoneNumbers
+     * @param ProfilePhoneNumber $phoneNumbers
      * @return Profile
      */
-    public function removePhoneNumber(\Wtsda\CoreBundle\Entity\ProfilePhoneNumber $phoneNumbers)
+    public function removePhoneNumber(ProfilePhoneNumber $phoneNumbers)
     {
         $this->phoneNumbers->removeElement($phoneNumbers);
         return $this;
@@ -178,10 +179,10 @@ class Profile
     /**
      * Add emailAddresses
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfileEmailAddress $emailAddresses
+     * @param ProfileEmailAddress $emailAddresses
      * @return Profile
      */
-    public function addEmailAddresses(\Wtsda\CoreBundle\Entity\ProfileEmailAddress $emailAddresses)
+    public function addEmailAddresses(ProfileEmailAddress $emailAddresses)
     {
         $this->emailAddresses[] = $emailAddresses;
         return $this;
@@ -190,10 +191,10 @@ class Profile
     /**
      * Remove emailAddresses
      *
-     * @param \Wtsda\CoreBundle\Entity\ProfileEmailAddress $emailAddresses
+     * @param ProfileEmailAddress $emailAddresses
      * @return Profile
      */
-    public function removeEmailAddresses(\Wtsda\CoreBundle\Entity\ProfileEmailAddress $emailAddresses)
+    public function removeEmailAddresses(ProfileEmailAddress $emailAddresses)
     {
         $this->emailAddresses->removeElement($emailAddresses);
         return $this;

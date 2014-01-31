@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,7 +19,7 @@ class Permission
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     protected $resource;
 
@@ -42,8 +43,8 @@ class Permission
      */
     public function __construct()
     {
-        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->roles = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     /**
@@ -104,10 +105,10 @@ class Permission
     /**
      * Add roles
      *
-     * @param \Wtsda\CoreBundle\Entity\Role $roles
+     * @param Role $roles
      * @return Permission
      */
-    public function addRole(\Wtsda\CoreBundle\Entity\Role $roles)
+    public function addRole(Role $roles)
     {
         $this->roles[] = $roles;
         return $this;
@@ -116,10 +117,10 @@ class Permission
     /**
      * Remove roles
      *
-     * @param \Wtsda\CoreBundle\Entity\Role $roles
+     * @param Role $roles
      * @return Permission
      */
-    public function removeRole(\Wtsda\CoreBundle\Entity\Role $roles)
+    public function removeRole(Role $roles)
     {
         $this->roles->removeElement($roles);
         return $this;
@@ -138,10 +139,10 @@ class Permission
     /**
      * Add users
      *
-     * @param \Wtsda\CoreBundle\Entity\User $users
+     * @param User $users
      * @return Permission
      */
-    public function addUser(\Wtsda\CoreBundle\Entity\User $users)
+    public function addUser(User $users)
     {
         $this->users[] = $users;
         return $this;
@@ -150,10 +151,10 @@ class Permission
     /**
      * Remove users
      *
-     * @param \Wtsda\CoreBundle\Entity\User $users
+     * @param User $users
      * @return Permission
      */
-    public function removeUser(\Wtsda\CoreBundle\Entity\User $users)
+    public function removeUser(User $users)
     {
         $this->users->removeElement($users);
         return $this;

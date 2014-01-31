@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,21 +23,21 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255, unique=true)
      */
     private $username;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="createdDate", type="datetime")
+     * @ORM\Column(name="created", type="bigint")
      */
-    private $createdDate;
+    private $created;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="lastLogin", type="datetimetz")
+     * @ORM\Column(name="lastLogin", type="bigint")
      */
     private $lastLogin;
 
@@ -55,10 +56,22 @@ class User
     private $active;
 
     /**
+     * @ORM\OneToOne(targetEntity="Password")
+     * @ORM\JoinColumn(name="password_id", referencedColumnName="id")
+     **/
+    private $password;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="users")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     **/
+    private $role;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Permission", inversedBy="users")
      * @ORM\JoinTable(name="UserPermissions")
      */
-    protected $permissions;
+    private $permissions;
 
     /**
      * Constructor
@@ -102,46 +115,51 @@ class User
     }
 
     /**
-     * Set createdDate
+     * Set created
      *
-     * @param \DateTime $createdDate
-     *
+     * @param integer $created
+     * @throws \InvalidArgumentException if $created is not an integer
      * @return User
      */
-    public function setCreatedDate($createdDate)
+    public function setCreated($created)
     {
-        $this->createdDate = $createdDate;
+        if(!is_integer($created)) {
+            throw new \InvalidArgumentException;
+        }
+        $this->created = $created;
         return $this;
     }
 
     /**
-     * Get createdDate
+     * Get created
      *
-     * @return \DateTime 
+     * @return integer
      */
-    public function getCreatedDate()
+    public function getCreated()
     {
-        return $this->createdDate;
+        return $this->created;
     }
 
     /**
      * Set lastLogin
      *
-     * @param \DateTime $lastLogin
-     *
+     * @param integer $lastLogin
+     * @throws \InvalidArgumentException if $lastLogin is not an integer
      * @return User
      */
     public function setLastLogin($lastLogin)
     {
+        if(!is_integer($lastLogin)) {
+            throw new \InvalidArgumentException;
+        }
         $this->lastLogin = $lastLogin;
-
         return $this;
     }
 
     /**
      * Get lastLogin
      *
-     * @return \DateTime 
+     * @return integer
      */
     public function getLastLogin()
     {
@@ -150,13 +168,16 @@ class User
 
     /**
      * Set salt
-     *
-     * @param string $salt
-     *
+     * Generates a salt based on the username and sha1
+     * @throws \InvalidArgumentException
      * @return User
      */
-    public function setSalt($salt)
+    public function setSalt()
     {
+        if(empty($this->username)) {
+            throw new \InvalidArgumentException;
+        }
+        $salt = sha1($this->username);
         $this->salt = $salt;
         return $this;
     }
@@ -195,6 +216,50 @@ class User
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set password
+     *
+     * @param Password $password
+     * @return User
+     */
+    public function setPassword(Password $password = null)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return Password
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set role
+     *
+     * @param Role $role
+     * @return User
+     */
+    public function setRole(Role $role = null)
+    {
+        $this->role = $role;
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return Role
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 
     /**

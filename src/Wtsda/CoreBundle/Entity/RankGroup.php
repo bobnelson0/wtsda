@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,7 +19,7 @@ class RankGroup
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, unique=true)
      */
     protected $name;
 
@@ -37,7 +38,7 @@ class RankGroup
      */
     public function __construct()
     {
-        $this->ranks = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ranks = new ArrayCollection();
     }
 
     /**
@@ -101,10 +102,10 @@ class RankGroup
     /**
      * Add ranks
      *
-     * @param \Wtsda\CoreBundle\Entity\Rank $ranks
+     * @param Rank $ranks
      * @return RankGroup
      */
-    public function addRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
+    public function addRank(Rank $ranks)
     {
         $this->ranks[] = $ranks;
         return $this;
@@ -113,10 +114,10 @@ class RankGroup
     /**
      * Remove ranks
      *
-     * @param \Wtsda\CoreBundle\Entity\Rank $ranks
+     * @param Rank $ranks
      * @return RankGroup
      */
-    public function removeRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
+    public function removeRank(Rank $ranks)
     {
         $this->ranks->removeElement($ranks);
         return $this;

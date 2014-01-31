@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,9 +19,9 @@ class Region
     protected $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", unique=true)
      */
-    protected $number;
+    protected $regionNumber;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,7 +43,7 @@ class Region
      */
     public function __construct()
     {
-        $this->dojangs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dojangs = new ArrayCollection();
     }
 
     /**
@@ -58,27 +59,27 @@ class Region
     /**
      * Set number
      *
-     * @param string $number
-     * @throws \InvalidArgumentException if $number is not an integer
+     * @param string $regionNumber
+     * @throws \InvalidArgumentException if $regionNumber is not an integer
      * @return Region
      */
-    public function setNumber($number)
+    public function setRegionNumber($regionNumber)
     {
-        if(!is_int($number)) {
+        if(!is_int($regionNumber)) {
             throw new \InvalidArgumentException;
         }
-        $this->number = $number;
+        $this->regionNumber = $regionNumber;
         return $this;
     }
 
     /**
-     * Get number
+     * Get regionNumber
      *
      * @return integer
      */
-    public function getNumber()
+    public function getRegionNumber()
     {
-        return $this->number;
+        return $this->regionNumber;
     }
 
     /**
@@ -132,10 +133,10 @@ class Region
     /**
      * Add dojangs
      *
-     * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
+     * @param Dojang $dojangs
      * @return address
      */
-    public function addDojang(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
+    public function addDojang(Dojang $dojangs)
     {
         $this->dojangs[] = $dojangs;
         return $this;
@@ -144,10 +145,10 @@ class Region
     /**
      * Remove dojangs
      *
-     * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
+     * @param Dojang $dojangs
      * @return Region
      */
-    public function removeDojang(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
+    public function removeDojang(Dojang $dojangs)
     {
         $this->dojangs->removeElement($dojangs);
         return $this;

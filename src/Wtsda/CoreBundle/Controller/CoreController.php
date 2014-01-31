@@ -21,9 +21,14 @@ class CoreController extends Controller
         return $this->render($viewPath . $suffix . '.html.twig', $args);
     }
 
+    protected function getEM()
+    {
+        return $this->getDoctrine()->getManager();
+    }
+
     protected function getRepo($entity)
     {
-        return $this->getDoctrine()->getRepository($entity);
+        return $this->getDoctrine()->getManager()->getRepository($entity);
     }
 
     protected function translate($message)

@@ -20,7 +20,7 @@ class Role
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, unique=true)
      */
     protected $name;
 
@@ -35,6 +35,11 @@ class Role
     protected $ord;
 
     /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="role")
+     */
+    protected $users;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Permission", inversedBy="roles")
      * @ORM\JoinTable(name="RolePermissions")
      */
@@ -45,6 +50,7 @@ class Role
      */
     public function __construct()
     {
+        $this->users = new ArrayCollection();
         $this->permissions = new ArrayCollection();
     }
 
@@ -127,6 +133,40 @@ class Role
     public function getOrd()
     {
         return $this->ord;
+    }
+
+    /**
+     * Add users
+     *
+     * @param User $user
+     * @return User
+     */
+    public function addUser(User $user)
+    {
+        $this->users[] = $user;
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param User $user
+     * @return User
+     */
+    public function removeUser(User $user)
+    {
+        $this->users->removeElement($user);
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 
     /**

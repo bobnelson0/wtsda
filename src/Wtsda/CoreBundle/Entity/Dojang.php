@@ -2,6 +2,7 @@
 
 namespace Wtsda\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -53,9 +54,9 @@ class Dojang
      */
     public function __construct()
     {
-        $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->phoneNumbers = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->emailAddresses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->addresses = new ArrayCollection();
+        $this->phoneNumbers = new ArrayCollection();
+        $this->emailAddresses = new ArrayCollection();
     }
 
     /**

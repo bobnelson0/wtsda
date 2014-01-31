@@ -18,7 +18,7 @@ class Rank
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, unique=true)
      */
     protected $name;
 
@@ -95,10 +95,10 @@ class Rank
     /**
      * Set rankGroup
      *
-     * @param \Wtsda\CoreBundle\Entity\RankGroup $rankGroup
+     * @param RankGroup $rankGroup
      * @return Rank
      */
-    public function setRankGroup(\Wtsda\CoreBundle\Entity\RankGroup $rankGroup = null)
+    public function setRankGroup(RankGroup $rankGroup = null)
     {
         $this->rankGroup = $rankGroup;
         return $this;
@@ -107,7 +107,7 @@ class Rank
     /**
      * Get rankGroup
      *
-     * @return \Wtsda\CoreBundle\Entity\RankGroup 
+     * @return RankGroup
      */
     public function getRankGroup()
     {
