@@ -40,16 +40,6 @@ class Role
      */
     protected $permissions;
 
-    /*
-    public function setOrd($ord)
-    {
-        if(!is_int($ord)) {
-            throw new \InvalidArgumentException;
-        }
-        $this->ord = $ord;
-        return $this;
-    }
-    */
     /**
      * Constructor
      */

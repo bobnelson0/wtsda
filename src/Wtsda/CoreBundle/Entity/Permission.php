@@ -31,12 +31,19 @@ class Permission
      * @ORM\ManyToMany(targetEntity="Role", mappedBy="permissions")
      */
     protected $roles;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="permissions")
+     */
+    protected $users;
+
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -126,5 +133,39 @@ class Permission
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    /**
+     * Add users
+     *
+     * @param \Wtsda\CoreBundle\Entity\User $users
+     * @return Permission
+     */
+    public function addUser(\Wtsda\CoreBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Wtsda\CoreBundle\Entity\User $users
+     * @return Permission
+     */
+    public function removeUser(\Wtsda\CoreBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

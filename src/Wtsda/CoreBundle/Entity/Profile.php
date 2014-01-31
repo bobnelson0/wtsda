@@ -11,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Profile
 {
     /**
+     * @var integer
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -18,34 +20,53 @@ class Profile
     protected $id;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=30)
      */
     protected $firstName;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @var string
+     *
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     protected $middleName;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=30)
      */
     protected $lastName;
 
     /**
-     * @ORM\Column(type="string", length=6)
+     * @var string
+     *
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     protected $associationNumber;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var \Date
+     *
+     * @ORM\Column(type="date")
      */
     protected $dateOfBirth;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var \string
+     *
+     * @ORM\Column(type="string", length=1)
      */
     protected $gender;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
 
     /**
      * @ORM\OneToMany(targetEntity="ProfileAddress", mappedBy="profile")
@@ -58,6 +79,32 @@ class Profile
     public function __construct()
     {
         $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @throws \InvalidArgumentException if $active is boolean
+     * @return Profile
+     */
+    public function setActive($active)
+    {
+        if(!is_bool($active)) {
+            throw new \InvalidArgumentException;
+        }
+        $this->active = $active;
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**

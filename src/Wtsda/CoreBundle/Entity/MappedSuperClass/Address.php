@@ -10,169 +10,169 @@ use Doctrine\ORM\Mapping as ORM;
 class Address
 {
     /**
-     * @ORM\Column(type="string", length=30, nullable=false)
+     * @ORM\Column(type="string", length=30)
      * e.g. mailing, physical, home, work
      */
     protected $type;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      * e.g. 123 Main St, City, State 54321
      */
     protected $formatted;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $streetNumber;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $streetName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * e.g. APT 123, Suite 404
      */
     protected $domicile;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * Indicates a named route (such as "US 101")
+     * Indicates a named route (such as "US 101", nullable=true)
      */
     protected $route;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a major intersection, usually of two major roads
      */
     protected $intersection;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a political entity. Usually, this type indicates a polygon of some civil administration
      */
     protected $political;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     protected $country;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      * Indicates a first-order civil entity below the country level.
      * Within the United States, these administrative levels are states.
      */
     protected $adminLevel1;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a second-order civil entity below the country level.
      * Within the United States, these administrative levels are counties.
      */
     protected $adminLevel2;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a third-order civil entity below the country level.
      * This type indicates a minor civil division.
      */
     protected $adminLevel3;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a commonly-used alternative name for the entity.
      */
     protected $colloquialArea;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      * Indicates an incorporated city or town political entity.
      */
     protected $locality;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a first-order civil entity below a locality.
      */
     protected $subLocality;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Each sublocality level is a civil entity.
      */
     protected $subLocality1;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Each sublocality level is a civil entity.
      */
     protected $subLocality2;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Each sublocality level is a civil entity.
      */
     protected $subLocality3;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Each sublocality level is a civil entity.
      */
     protected $subLocality4;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Each sublocality level is a civil entity.
      */
     protected $subLocality5;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a named neighborhood
      */
     protected $neighborhood;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a named location, usually a building or collection of buildings with a common name.
      */
     protected $premise;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a first-order entity below a named location,
      * usually a singular building within a collection of buildings with a common name
      */
     protected $subPremise;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     protected $postalCode;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a prominent natural feature.
      */
     protected $naturalFeature;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates an airport.
      */
     protected $airport;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a named park.
      */
     protected $park;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * Indicates a named point of interest.
      * Typically, these "POI"s are prominent local entities that don't easily fit in another category such as
      * "Empire State Building" or "Statue of Liberty."
