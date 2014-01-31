@@ -114,10 +114,12 @@ class RankGroup
      * Remove ranks
      *
      * @param \Wtsda\CoreBundle\Entity\Rank $ranks
+     * @return RankGroup
      */
     public function removeRank(\Wtsda\CoreBundle\Entity\Rank $ranks)
     {
         $this->ranks->removeElement($ranks);
+        return $this;
     }
 
     /**

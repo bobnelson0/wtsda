@@ -39,11 +39,23 @@ class Dojang
     protected $addresses;
 
     /**
+     * @ORM\OneToMany(targetEntity="DojangPhoneNumber", mappedBy="dojang")
+     */
+    protected $phoneNumbers;
+
+    /**
+     * @ORM\OneToMany(targetEntity="DojangEmailAddress", mappedBy="dojang")
+     */
+    protected $emailAddresses;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->phoneNumbers = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->emailAddresses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -104,7 +116,7 @@ class Dojang
      * Set region
      *
      * @param \Wtsda\CoreBundle\Entity\Region $region
-     * @return Region
+     * @return Dojang
      */
     public function setRegion(\Wtsda\CoreBundle\Entity\Region $region = null)
     {
@@ -126,7 +138,7 @@ class Dojang
      * Add addresses
      *
      * @param \Wtsda\CoreBundle\Entity\DojangAddress $addresses
-     * @return address
+     * @return Dojang
      */
     public function addAddress(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
     {
@@ -138,10 +150,12 @@ class Dojang
      * Remove addresses
      *
      * @param \Wtsda\CoreBundle\Entity\DojangAddress $addresses
+     * @return Dojang
      */
     public function removeAddress(\Wtsda\CoreBundle\Entity\DojangAddress $addresses)
     {
         $this->addresses->removeElement($addresses);
+        return $this;
     }
 
     /**
@@ -152,5 +166,73 @@ class Dojang
     public function getAddresses()
     {
         return $this->addresses;
+    }
+
+    /**
+     * Add phoneNumbers
+     *
+     * @param \Wtsda\CoreBundle\Entity\DojangPhoneNumber $phoneNumbers
+     * @return Dojang
+     */
+    public function addPhoneNumber(\Wtsda\CoreBundle\Entity\DojangPhoneNumber $phoneNumbers)
+    {
+        $this->phoneNumbers[] = $phoneNumbers;
+        return $this;
+    }
+
+    /**
+     * Remove phoneNumbers
+     *
+     * @param \Wtsda\CoreBundle\Entity\DojangPhoneNumber $phoneNumbers
+     * @return Dojang
+     */
+    public function removePhoneNumber(\Wtsda\CoreBundle\Entity\DojangPhoneNumber $phoneNumbers)
+    {
+        $this->phoneNumbers->removeElement($phoneNumbers);
+        return $this;
+    }
+
+    /**
+     * Get phoneNumbers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPhoneNumbers()
+    {
+        return $this->phoneNumbers;
+    }
+
+    /**
+     * Add emailAddresses
+     *
+     * @param \Wtsda\CoreBundle\Entity\DojangEmailAddress $emailAddresses
+     * @return Dojang
+     */
+    public function addEmailAddresses(\Wtsda\CoreBundle\Entity\DojangEmailAddress $emailAddresses)
+    {
+        $this->emailAddresses[] = $emailAddresses;
+        return $this;
+    }
+
+    /**
+     * Remove emailAddresses
+     *
+     * @param \Wtsda\CoreBundle\Entity\DojangEmailAddress $emailAddresses
+     * @return Dojang
+     */
+    public function removeEmailAddresses(\Wtsda\CoreBundle\Entity\DojangEmailAddress $emailAddresses)
+    {
+        $this->emailAddresses->removeElement($emailAddresses);
+        return $this;
+    }
+
+    /**
+     * Get emailAddresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEmailAddresses()
+    {
+        return $this->emailAddresses;
     }
 }

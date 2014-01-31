@@ -145,10 +145,12 @@ class Region
      * Remove dojangs
      *
      * @param \Wtsda\CoreBundle\Entity\Dojang $dojangs
+     * @return Region
      */
     public function removeDojang(\Wtsda\CoreBundle\Entity\Dojang $dojangs)
     {
         $this->dojangs->removeElement($dojangs);
+        return $this;
     }
 
     /**

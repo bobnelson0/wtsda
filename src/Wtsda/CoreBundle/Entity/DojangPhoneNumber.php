@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="DojangAddresses")
+ * @ORM\Table(name="DojangPhoneNumbers")
  */
-class DojangAddress extends MappedSuperClass\Address
+class DojangPhoneNumber extends MappedSuperClass\PhoneNumber
 {
     /**
      * @ORM\Id
@@ -18,7 +18,7 @@ class DojangAddress extends MappedSuperClass\Address
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Dojang", inversedBy="addresses")
+     * @ORM\ManyToOne(targetEntity="Dojang", inversedBy="phoneNumbers")
      * @ORM\JoinColumn(referencedColumnName="id")
      **/
     protected $dojang;
@@ -37,7 +37,7 @@ class DojangAddress extends MappedSuperClass\Address
      * Set dojang
      *
      * @param \Wtsda\CoreBundle\Entity\Dojang $dojang
-     * @return DojangAddress
+     * @return DojangPhoneNumber
      */
     public function setDojang(\Wtsda\CoreBundle\Entity\Dojang $dojang = null)
     {

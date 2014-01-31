@@ -155,10 +155,12 @@ class Role
      * Remove permissions
      *
      * @param \Wtsda\CoreBundle\Entity\Permission $permissions
+     * @return Role
      */
     public function removePermission(Permission $permissions)
     {
         $this->permissions->removeElement($permissions);
+        return $this;
     }
 
     /**

@@ -85,10 +85,12 @@ class HyungType {
      * Remove hyungs
      *
      * @param \Wtsda\CoreBundle\Entity\Hyung $hyungs
+     * @return HyungType
      */
     public function removeHyung(\Wtsda\CoreBundle\Entity\Hyung $hyungs)
     {
         $this->hyungs->removeElement($hyungs);
+        return $this;
     }
 
     /**
