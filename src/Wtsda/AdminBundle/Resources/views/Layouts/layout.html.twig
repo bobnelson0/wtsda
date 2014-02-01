@@ -8,98 +8,130 @@
 {% endblock %}
 
 {% block body_container_header %}
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="/admin/">WTSDA Admin</a>
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">List Events</a></li>
-                                <li><a href="#">Add an Event</a></li>
-                                <li><a href="#">Edit an Event</a></li>
-                                <li><a href="#">My Events</a></li>
-                            </ul>
-                        </li>
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regions <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">List Regions</a></li>
-                                <li><a href="#">Add a Region</a></li>
-                                <li><a href="#">Edit a Region</a></li>
-                                <li><a href="#">My Regions</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dojangs <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">List Dojangs</a></li>
-                                <li><a href="#">Add a Dojangs</a></li>
-                                <li><a href="#">Edit a Dojangs</a></li>
-                                <li><a href="#">My Dojangs</a></li>
-                            </ul>
-                        </li>
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profiles <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/profiles/">List Profiles</a></li>
-                                <li><a href="#">Add a Profile</a></li>
-                                <li><a href="#">Edit a Profile</a></li>
-                                <li><a href="#">Assign Profiles to Users</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/users/">List Users</a></li>
-                                <li><a href="/admin/users/add/">Add a User</a></li>
-                            </ul>
-                        </li>
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">System <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/user-permissions/">User Permissions</a></li>
-                                <li><a href="/admin/role-permissions/">Role Permissions</a></li>
-                                <li><a href="/admin/roles/">Roles</a></li>
-                                <li><a href="/admin/permissions/">Permissions</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Event Types</a></li>
-                                <li><a href="#">Forms</a></li>
-                                <li><a href="#">Ranks</a></li>
-                                <li><a href="#">Category types</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">DELETE a user</a></li>
-                                <li><a href="#">DELETE a profile</a></li>
-                                <li><a href="#">DELETE a role</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="nav pull-right">
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <!-- <li class="divider"></li> -->
-                                <li><a href="/user/logout/">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+                </button>
+                <a class="navbar-brand" href="#">WTSDA Admin</a>
             </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">System <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Permissions</a></li>
+                            <li><a href="#">Roles</a></li>
+                            <li><a href="#">Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Robert Nelson<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Edit My Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {#<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/admin/">WTSDA Admin</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">List Events</a></li>
+                            <li><a href="#">Add an Event</a></li>
+                            <li><a href="#">Edit an Event</a></li>
+                            <li><a href="#">My Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regions <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">List Regions</a></li>
+                            <li><a href="#">Add a Region</a></li>
+                            <li><a href="#">Edit a Region</a></li>
+                            <li><a href="#">My Regions</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dojangs <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">List Dojangs</a></li>
+                            <li><a href="#">Add a Dojangs</a></li>
+                            <li><a href="#">Edit a Dojangs</a></li>
+                            <li><a href="#">My Dojangs</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profiles <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/profiles/">List Profiles</a></li>
+                            <li><a href="#">Add a Profile</a></li>
+                            <li><a href="#">Edit a Profile</a></li>
+                            <li><a href="#">Assign Profiles to Users</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/users/">List Users</a></li>
+                            <li><a href="/admin/users/add/">Add a User</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">System <b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/user-permissions/">User Permissions</a></li>
+                            <li><a href="/admin/role-permissions/">Role Permissions</a></li>
+                            <li><a href="/admin/roles/">Roles</a></li>
+                            <li><a href="/admin/permissions/">Permissions</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Event Types</a></li>
+                            <li><a href="#">Forms</a></li>
+                            <li><a href="#">Ranks</a></li>
+                            <li><a href="#">Category types</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">DELETE a user</a></li>
+                            <li><a href="#">DELETE a profile</a></li>
+                            <li><a href="#">DELETE a role</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <!-- <li class="divider"></li> -->
+                            <li><a href="/user/logout/">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->#}
         </div>
-    </div>
+    </nav>
 {% endblock %}
 
 {% block body_container_footer %}
