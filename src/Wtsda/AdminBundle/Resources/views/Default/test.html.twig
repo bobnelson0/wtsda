@@ -1,7 +1,9 @@
-{% extends "WtsdaAdminBundle:Layouts:layout.html.twig" %}
+{% extends "WtsdaAdminBundle:Layouts:ajaxContent.html.twig" %}
 
-{% block head_title %}WTSDA Admin{% endblock %}
+{% block header_left_title_icon %}fa-key{% endblock %}
+{% block header_left_title_large %}Secret{% endblock %}
+{% block header_left_title_small %}Testing{% endblock %}
 
-{% block body_container_main %}
+{% block body_main_content %}
     <pre>{{ output }}</pre>
 {% endblock %}

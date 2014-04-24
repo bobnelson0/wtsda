@@ -1,0 +1,74 @@
+{% extends "WtsdaAdminBundle:Layouts:ajaxContent.html.twig" %}
+
+{% block header_left_title_icon %}fa-key{% endblock %}
+{% block header_left_title_large %}Permissions{% endblock %}
+{% block header_left_title_small %}Add{% endblock %}
+
+{% block body_main_content %}
+
+    <section id="widget-grid" class="">
+
+    <!-- START ROW -->
+        <div class="row">
+
+            <!-- NEW COL START -->
+            <article class="col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-0" role="widget">
+                    <header role="heading">
+                        <span class="widget-icon"> <i class="fa fa-plus"></i> </span>
+                        <h2>{% trans %}Add a Permission{% endtrans %}</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div role="content">
+
+                        <!-- widget content -->
+                        <div class="widget-body no-padding">
+
+                        <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+
+                        <fieldset>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="input"> <i class="icon-prepend fa fa-asterisk"></i>
+                                        <input type="text" name="resource" placeholder="Resource">
+                                    </label>
+                                </section>
+                                <section class="col col-6">
+                                    <label class="input"> <i class="icon-prepend fa fa-info"></i>
+                                        <input type="text" name="description" placeholder="Description">
+                                    </label>
+                                </section>
+                            </div>
+                        </fieldset>
+
+                        <footer>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> Permission
+                            </button>
+                        </footer>
+                        </form>
+
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+
+                </div>
+                <!-- end widget -->
+
+            </article>
+            <!-- END COL -->
+
+    </div>
+
+    <!-- END ROW -->
+
+    </section>
+    <script src="{{ asset('bundles/wtsdaadmin/js/admin.perms.js') }}"></script>
+    <script type="text/javascript">$(document).ready(function() { Admin.Perms.init(); });</script>
+
+{% endblock %}

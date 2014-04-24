@@ -3,7 +3,6 @@
 namespace Wtsda\AdminBundle\Controller;
 
 use Wtsda\CoreBundle\Controller\CoreController;
-use Symfony\Component\HttpFoundation\Response;
 use Wtsda\CoreBundle\Entity\Permission;
 use Wtsda\CoreBundle\Entity\Role;
 
@@ -12,6 +11,11 @@ class DefaultController extends CoreController
     public function indexAction()
     {
         return $this->_render('WtsdaAdminBundle:Default:index');
+    }
+
+    public function dashboardAction()
+    {
+        return $this->_render('WtsdaAdminBundle:Default:dashboard');
     }
 
     public function testAction()

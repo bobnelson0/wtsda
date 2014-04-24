@@ -3,6 +3,8 @@
 namespace Wtsda\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CoreController extends Controller
 {
@@ -29,6 +31,13 @@ class CoreController extends Controller
     protected function getRepo($entity)
     {
         return $this->getDoctrine()->getManager()->getRepository($entity);
+    }
+
+    protected function getJsonResponse($data)
+    {
+        $response = new JsonResponse();
+        $response->setData($data);
+        return $response;
     }
 
     protected function translate($message)

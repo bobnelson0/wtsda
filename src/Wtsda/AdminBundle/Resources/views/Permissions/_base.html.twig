@@ -1,0 +1,5 @@
+{% extends "WtsdaAdminBundle:Layouts:layout.html.twig" %}
+
+{% block js_onload %}
+    $(document).ready(function() { Admin.Perms.init(); });
+{% endblock %}
