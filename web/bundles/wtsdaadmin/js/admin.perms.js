@@ -7,7 +7,13 @@ Admin.Perms = Admin.Perms || function(){
         },
         pub = {
             init : function() {
-                alert("perms");
+
+            },
+            validate : function() {
+
+            },
+            submit : function() {
+
             }
         };
     return pub;

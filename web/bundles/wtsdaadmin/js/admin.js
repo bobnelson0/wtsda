@@ -5,7 +5,7 @@ var Admin = Admin || function() {
         },
         pub = {
             init : function() {
-                alert("admin");
+
             }
         };
     return pub;

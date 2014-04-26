@@ -27,25 +27,25 @@
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                        <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+                        <form id="permForm" class="smart-form" novalidate="novalidate">
 
                         <fieldset>
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="input"> <i class="icon-prepend fa fa-asterisk"></i>
-                                        <input type="text" name="resource" placeholder="Resource">
+                                        <input type="text" name="resource" placeholder="Resource ID">
                                     </label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="input"> <i class="icon-prepend fa fa-info"></i>
-                                        <input type="text" name="description" placeholder="Description">
+                                        <input type="text" name="description" placeholder="Describe the resource">
                                     </label>
                                 </section>
                             </div>
                         </fieldset>
 
                         <footer>
-                            <button type="submit" class="btn btn-primary">
+                            <button id="permSubmit" type="submit" class="btn btn-primary">
                                 <i class="fa fa-plus"></i> Permission
                             </button>
                         </footer>
