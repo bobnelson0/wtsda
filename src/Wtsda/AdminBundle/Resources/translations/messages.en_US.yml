@@ -1,0 +1,29 @@
+# WTSDA Admin en_US
+admin:
+
+# Navigation
+  nav:
+    perms: Permissions
+
+# Titles
+  title:
+    site: WTSDA Admin
+    dashboard: Dashboard
+    dashboard: Profiles
+    permissions: Permissions
+
+# Labels
+  label:
+    ok: OK
+    cancel: Cancel
+    save: Save
+
+    site: WTSDA Admin
+    permission: Permission
+    permissions: Permissions
+    role: Role
+    roles: Roles
+    user: User
+    school: Studio
+    profile: Profile
+

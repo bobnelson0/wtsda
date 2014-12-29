@@ -1,0 +1,93 @@
+# WTSDA App en_US
+
+#Header
+app.header.login: Login
+app.header.register: Register
+app.header.title: WTSDA Region 1
+app.header.subtitle: Covering WA, OR, HI, ID, NV, Northern CA
+
+#Footer
+app.footer.regionaldirector: Regional Director
+app.footer.contactus: Contact Us
+app.footer.phone.abbr: P
+app.footer.phone.full: Phone
+app.footer.email.abbr: E
+app.footer.email.full: Email
+app.footer.disclaimer: The information/content within the pages of the %regionalHrefStart%WTSDA Region 1%hrefEnd% web site is the sole property of the %wtsdaHrefStart%World Tang Soo Do Association%hrefEnd%. The images and information contained herein may not be reproduced without the express written permission of the %wtsdaHrefStart%World Tang Soo Do Association%hrefEnd%. The %wtsdaHrefStart%World Tang Soo Do Association%hrefEnd% is not responsible for the content of any information contained in %regionalHrefStart%WTSDA Region 1%hrefEnd% website.
+app.footer.contact.email: director@wtsda-region1.org
+app.footer.contact.phone: (541) 672-6190
+
+#Page <title> tags
+app.title.site.text: WTSDA Region 1
+app.title.index.text: Welcome
+app.title.news.text: News
+app.title.events.text: Events
+app.title.dojangs.text: Dojangs
+app.title.scholarship.text: Scholarship
+app.title.resources.text: Resources
+app.title.about.text: About
+
+#Navigation
+app.nav.index.text: Home
+app.nav.index.title: Welcome to the WTSDA Region 1 Website
+app.nav.news.text: News
+app.nav.news.title: Latest updates and announcements from Region 1
+app.nav.events.text: Events
+app.nav.events.title: Upcoming events around Region 1
+app.nav.dojangs.text: Dojangs
+app.nav.dojangs.title: Visit one of the many schools in Region 1
+app.nav.scholarship.text: Scholarship
+app.nav.scholarship.title: Donate and get more information about the WTSDF Region 1 Scholarship program
+app.nav.resources.text: Resources
+app.nav.resources.title: Videos, photos, and links for WTSDA Region 1
+app.nav.about.text: About
+app.nav.about.title: Learn about Region 1 and who we are
+
+#Page header titles
+app.headers.index.text: Welcome
+app.headers.news.text: Latest News And Updates
+app.headers.events.text: Upcoming Events
+app.headers.dojangs.text: Dojangs In Region 1
+app.headers.scholarship.text: WTSDF Region 1 Scholarship Program
+app.headers.resources.text: WTSDA Resources
+app.headers.about.text: About Region 1
+
+#sidebar
+app.sidebar.stayconnected: Stay Connected
+app.sidebar.donate: Donate
+
+#index
+app.index.tiles.latest: Latest
+app.index.tiles.stayconnected: Stay Connected
+app.index.tiles.socialmedia: Social Media
+app.index.tiles.donate: Donate
+
+#forms
+app.forms.email.text: Email
+
+#Global
+app.person.rank.master: Master
+app.person.title.mr: Mr.
+app.person.title.mrs: Mrs.
+app.person.title.ms: Ms.
+app.person.title.dr: Dr.
+
+app.wtsda.region.r1.title: WTSDA Region 1
+app.wtsda.hq.title: World Tang Soo Do Association
+
+app.donate.tagline: Donate to the WTSDF Region 1 Scholarship Fund!
+app.donate.paypal.code: >
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="TPU6P8BT6BC32">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+app.donate.application.submit.link: Submit your scholarship application!
+app.donate.learnmore.link: Learn more...
+
+app.link.clickhere: Click here
+app.donate.application.link: '#'
+
+#Debug
+app.debug.filler.bacon: Bacon ipsum dolor sit amet chuck shoulder spare ribs beef venison pork loin leberkas ribeye salami shank. Cow chuck pork loin short ribs leberkas, pig boudin capicola fatback bacon pastrami. Pork chop sirloin shoulder kevin, ball tip prosciutto kielbasa. Turkey boudin bacon pork belly cow pastrami spare ribs ham corned beef capicola andouille flank jowl pig pancetta. Sausage rump tail meatball tenderloin pork belly turducken, pastrami bresaola jerky frankfurter. Ribeye short loin rump, brisket t-bone chicken ham hock turducken filet mignon cow jerky leberkas. Ground round kielbasa tri-tip tail. Short ribs tail capicola jowl bacon t-bone, ribeye biltong flank meatloaf rump cow leberkas strip steak. Kevin sausage short loin corned beef andouille ground round drumstick. Tongue chuck strip steak, meatball capicola shankle doner jerky pancetta swine rump andouille. Beef pork chop ground round boudin frankfurter tongue bresaola bacon flank pork belly. Rump leberkas turkey bacon pork chop shank pig. Corned beef salami jowl, short ribs ground round strip steak pork chop turducken pig andouille. Pork belly chicken spare ribs kielbasa prosciutto frankfurter rump. Drumstick andouille pork frankfurter capicola, kielbasa rump short ribs. Salami turkey corned beef shankle chicken. Tongue turkey beef ribs, pastrami ground round cow filet mignon strip steak meatloaf andouille brisket chicken swine chuck fatback. Leberkas shankle ball tip pig drumstick jerky biltong kielbasa. Drumstick swine capicola, ball tip ham hock biltong pork loin rump kielbasa jerky leberkas pork belly.

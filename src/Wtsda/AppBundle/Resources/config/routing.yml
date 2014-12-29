@@ -1,0 +1,31 @@
+app_index:
+    pattern:  /
+    defaults: { _controller: WtsdaAppBundle:Default:index }
+
+app_news:
+    pattern:  /news/
+    defaults: { _controller: WtsdaAppBundle:News:index }
+
+app_events:
+    pattern: /events/
+    defaults: { _controller: WtsdaAppBundle:Events:index }
+
+app_dojangs:
+    pattern: /dojangs/
+    defaults: { _controller: WtsdaAppBundle:Dojangs:index }
+
+app_scholarship:
+    pattern: /scholarship/
+    defaults: { _controller: WtsdaAppBundle:Scholarship:index }
+
+app_resources:
+    pattern: /resources/
+    defaults: { _controller: WtsdaAppBundle:Resources:index }
+
+app_about:
+    pattern: /about/
+    defaults: { _controller: WtsdaAppBundle:About:index }
+
+app_events_region1Champs2014:
+  pattern: /events/r2014Championship/
+  defaults: { _controller: WtsdaAppBundle:Events:region1Champs2014 }

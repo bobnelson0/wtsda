@@ -1,0 +1,114 @@
+{% extends "WtsdaAppBundle:Layouts:defaultBlank.html.twig" %}
+
+{% block navActIndex %} class="active"{% endblock %}
+
+{% block head_title_tag_page %}{% trans %}app.title.index.text{% endtrans %}{% endblock %}
+
+{% block body_container_main_content %}
+    <div id="myCarousel" class="carousel slide content banner">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner" style="width:998px; height: 275px;">
+            <div class="active item" style="background-image: url('http://geektreks.com/wp-content/uploads/2013/02/11.jpg'); background-size:998px 275px; width:998px; height: 275px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1>San Francisco Clinic</h1>
+                    <p>Special guests Master Elmore, Master Rupp, and Mr. Cerceau</p>
+                    <p>Oct 5th, 2013. Come Join us!</p>
+                    <br />
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('http://www.wtsda-region21.com/Resources/blackbelt.jpeg'); background-size:998px 275px; width:998px; height: 275px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1 style="color:white;">Fall Black Belt Test</h1>
+                    <p style="color:white;">Come support those testing for Black Belt</p>
+                    <p style="color:white;">October 5th. Good luck!</p>
+                    <br />
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('http://www.visitingdc.com/images/seattle-skyline-picture.jpg'); background-size:998px 275px; width:998px; height: 275px;">
+                <div class="pull-right" style="margin-right:70px; margin-top:15px;">
+                    <h1>Seattle Clinic</h1>
+                    <p>Special guests Master Auer and Master Rupp</p>
+                    <p>July 27th. Come Join us!</p>
+                    <br />
+                    <p>
+                        <a class="btn btn-primary btn-large">
+                            Learn more
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    <div class="row-fluid tiles">
+        <div class="span4">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.latest{% endtrans %}</h5>
+                <p>
+                    <ul>
+                        <li><a href="#">2013 Championships. Register Now!</a></li>
+                        <li><a href="#">Congrats to Master SoAndSo...</a></li>
+                        <li><a href="#">Student of the Year...</a></li>
+                        <li><a href="#">Don't forget to register for...</a></li>
+                        <li><a href="#">New regional Black belts...</a></li>
+                        <li><a href="#">What it takes to be a Master...</a></li>
+                        <li><a href="#">Black belt test soon...</a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="span4">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h5>
+                <br>
+                <p>
+                    Join our mailing list
+                        <form>
+                            <div class="input-append">
+                                <input class="span7" id="email" type="text" placeholder="Email">
+                                <button class="btn" type="button">Join!</button>
+                            </div>
+                        </form>
+                </p>
+            </div>
+        </div>
+        {#<div class="span3">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.socialmedia{% endtrans %}</h5>
+                <p>CONTENT</p>
+            </div>
+        </div>#}
+        <div class="span4">
+            <div class="tile">
+                <h5>{% trans %}app.index.tiles.donate{% endtrans %}</h5>
+                <p>
+                    <p>{% trans %}app.donate.tagline{% endtrans %}</p>
+                    {{ 'app.donate.paypal.code' | trans | raw }}
+                    <br><br>
+                    <p>{% trans %}app.donate.application.link{% endtrans %}</p>
+                    <a href="#">{% trans %}app.link.clickhere{% endtrans %}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

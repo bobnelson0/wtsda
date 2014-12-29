@@ -1,0 +1,33 @@
+{% extends "WtsdaAppBundle:Layouts:default.html.twig" %}
+
+{% block body_container_main_content %}
+    <div class="content padding">
+        <div class="row-fluid">
+            <div class="span9">
+                {% block leftContent %}{% endblock %}
+            </div>
+            <div class="span3 sidebar pull-right tiles">
+                <div class="tile" style="text-align: center;">
+                    <h6>{% trans %}app.index.tiles.stayconnected{% endtrans %}</h6>
+                    <p>
+                        Join our mailing list
+                        <form>
+                            <div class="input-append">
+                                <input class="span7" id="email" type="text" placeholder="Email">
+                                <button class="btn" type="button">Join!</button>
+                            </div>
+                        </form>
+                    </p>
+                </div>
+                <div class="tile" style="text-align: center;">
+                    <h6>{% trans %}app.index.tiles.donate{% endtrans %}</h6>
+                    <p>
+                        <p>{% trans %}app.donate.tagline{% endtrans %}</p>
+                        {{ 'app.donate.paypal.code' | trans | raw }}
+                        <a href="#">{% trans %}app.donate.learnmore.link{% endtrans %}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "WtsdaCoreBundle:Layouts:base.html.twig" %}
+
+{% block head_title %}
+    {% block head_title_tag_page %}{% endblock %}
+    {% block head_title_tag_site %} | {% trans %}app.title.site.text{% endtrans %}{% endblock %}
+{% endblock %}
+
+{% block head_css %}
+    {{ parent() }}
+    {% stylesheets 'bundles/wtsdaapp/css/*.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body_container_header %}
+    <div id="hContainer">
+        <div class="row-fluid">
+            <div class="span5">
+                <div class="logo">
+                    <a href="http://www.worldtangsoodo.com/" target="_blank">
+                        <img src="{{ asset('bundles/wtsdaapp/images/logos/wtsda/wtsda_129x129.png') }}" />
+                    </a>
+                </div>
+                <div class="siteHeaderText"">
+                    <h4><a class="no-change" href="{{ path('app_index') }}">{% trans %}app.header.title{% endtrans %}</a></h4>
+                    <small><em>{% trans %}app.header.subtitle{% endtrans %}</em></small>
+                </div>
+            </div>
+            <div class="span7">
+                <div class="login">
+                    <small>
+                        <a href="#">{% trans %}app.header.login{% endtrans %} | {% trans %}app.header.register{% endtrans %}</a>
+                    </small>
+                </div>
+                <div id="siteNav">
+                    <ul class="nav nav-pills wtsda">
+                        <li{% block navActIndex %}{% endblock %}>
+                            <a href="{{ path('app_index') }}" title="{% trans %}app.nav.index.title{% endtrans %}">
+                                {% trans %}app.nav.index.text{% endtrans %}</a></li>
+
+                        {#<li{% block navActNews %}{% endblock %}>
+                            <a href="{{ path('app_news') }}" title="{% trans %}app.nav.news.title{% endtrans %}">
+                                {% trans %}app.nav.news.text{% endtrans %}</a></li>#}
+
+                        <li{% block navActEvents %}{% endblock %}>
+                            <a href="{{ path('app_events') }}" title="{% trans %}app.nav.events.title{% endtrans %}">
+                                {% trans %}app.nav.events.text{% endtrans %}</a></li>
+
+                        <li{% block navActDojangs %}{% endblock %}>
+                            <a href="{{ path('app_dojangs') }}" title="{% trans %}app.nav.dojangs.title{% endtrans %}">
+                                {% trans %}app.nav.dojangs.text{% endtrans %}</a></li>
+
+                        <li{% block navActScholarship %}{% endblock %}>
+                            <a href="{{ path('app_scholarship') }}" title="{% trans %}app.nav.scholarship.title{% endtrans %}">
+                                {% trans %}app.nav.scholarship.text{% endtrans %}</a></li>
+
+                        {#<li{% block navActResources %}{% endblock %}>
+                            <a href="{{ path('app_resources') }}" title="{% trans %}app.nav.resources.title{% endtrans %}">
+                                {% trans %}app.nav.resources.text{% endtrans %}</a></li>#}
+
+                        <li{% block navActAbout %}{% endblock %}>
+                            <a href="{{ path('app_about') }}" title="{% trans %}app.nav.about.title{% endtrans %}">
+                                {% trans %}app.nav.about.text{% endtrans %}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body_container_main %}
+    {% block body_container_main_prepend %}{% endblock %}
+    {% block body_container_main_content %}{% endblock %}
+    {% block body_container_main_append %}{% endblock %}
+{% endblock %}
+
+{% block body_container_footer %}
+    <div class="row-fluid">
+        <div class="span6 pull-left">
+            <a class="no-change" href="{{ path('app_index') }}">
+                <strong>&copy; {{ "now"|date("Y") }} {% trans %}app.wtsda.region.r1.title{% endtrans %}</strong>
+            </a> |
+            <a class="no-change" href="#">{% trans %}app.footer.contactus{% endtrans %} <i class="icon-envelope"></i></a>
+            <br>
+            <small>
+                <address>
+                    <strong>
+                        {% trans %}app.footer.regionaldirector{% endtrans %}:
+                    </strong> {% trans %}app.person.rank.master{% endtrans %} John Auer
+                    <br>
+                    <strong><abbr title="{% trans %}app.footer.email.full{% endtrans %}">{% trans %}app.footer.email.abbr{% endtrans %}</abbr></strong>: <a href="mailto:{% trans %}app.footer.contact.email{% endtrans %}">{% trans %}app.footer.contact.email{% endtrans %}</a>
+                    <br>
+                    <strong><abbr title="{% trans %}app.footer.phone.full{% endtrans %}">{% trans %}app.footer.phone.abbr{% endtrans %}
+                    </abbr></strong>: {% trans %}app.footer.contact.phone{% endtrans %}
+                </address>
+            </small>
+        </div>
+        <div class="span6 text-right disclaimer">
+            <small>
+                <em>
+                    {{ 'app.footer.disclaimer' |
+                        trans(
+                            {
+                                '%regionalHrefStart%' : '<a class="no-change" href="'~path('app_index')~'">',
+                                '%wtsdaHrefStart%': '<a class="no-change" href="http://www.worldtangsoodo.com" target="_blank">',
+                                '%hrefEnd%' : '</a>'
+                            }) | raw
+                    }}
+                </em>
+            </small>
+        </div>
+    </div>
+{% endblock %}
+

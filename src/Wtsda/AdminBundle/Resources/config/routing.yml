@@ -1,0 +1,38 @@
+##### Default Controller
+wtsda_admin_index:
+    pattern:  /admin/
+    defaults: { _controller: WtsdaAdminBundle:Default:index }
+
+wtsda_admin_default_dashboard:
+  pattern:  /admin/dashboard/
+  defaults: { _controller: WtsdaAdminBundle:Default:dashboard }
+
+
+##### Profiles Controller
+wtsda_admin_profiles_index:
+    path: /admin/profiles/
+    defaults: { _controller: WtsdaAdminBundle:Profiles:index }
+
+wtsda_admin_profiles_add:
+    path: /admin/profiles/add/
+    defaults: { _controller: WtsdaAdminBundle:Profiles:add }
+
+
+##### Regions Controller
+wtsda_admin_regions_index:
+    path: /admin/regions/
+    defaults: { _controller: WtsdaAdminBundle:Regions:index }
+
+wtsda_admin_regions_add:
+    path: /admin/regions/add/
+    defaults: { _controller: WtsdaAdminBundle:Regions:add }
+
+
+##### Permissions Controller
+wtsda_admin_perms_index:
+    path: /admin/permissions/
+    defaults: { _controller: WtsdaAdminBundle:Permissions:index }
+
+wtsda_admin_perms_add:
+    path: /admin/permissions/add/
+    defaults: { _controller: WtsdaAdminBundle:Permissions:add }

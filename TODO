@@ -1,0 +1,38 @@
+Doctrine Notes
+---------------
+Hyung -> Hyung Types: Many to One Uni
+Dojang -> Address: One to many Uni
+Profile -> Address: One to Many Uni
+Profile -> Email: One to Many Uni
+Profile -> JudgeCert: Many to One Uni
+Profile -> Rank: Many to One Uni
+Rank -> Rank Groups: Many to One Uni
+Permissions -> Roles: Many to Many Uni
+Permissions -> Roles: Many to Many Uni
+User -> Profile: One to Many Bi
+User -> Password: One to One Uni
+
+
+
+
+1. Create login page + layout
+2. Create permission functions
+3. Implement ACL
+
+Bundle Structure
+Name exs: 
+WtsdaAdminBundle
+WtsdaAdminEventsBundle
+WtsdaAppBundle
+WtsdaAppEventsBundle
+
+Wtsda
+\Admin
+    AdminBundle
+    \Events
+\App
+    \Events
+
+
+Write deploy script and plan
+Obfuscate pws

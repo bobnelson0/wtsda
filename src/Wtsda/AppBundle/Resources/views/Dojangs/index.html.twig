@@ -1,0 +1,86 @@
+{% extends "WtsdaAppBundle:Layouts:defaultNoSideBar.html.twig" %}
+
+{% set useMap = true %}
+
+{% block navActDojangs %} class="active"{% endblock %}
+
+{% block head_title_tag_page %}{% trans %}app.title.dojangs.text{% endtrans %}{% endblock %}
+
+{% block leftContent %}
+    <h3 class="pageTitle">{% trans %}app.headers.dojangs.text{% endtrans %}</h3>
+    <div class="row-fluid">
+        <div class="span4">
+            <ul>
+                {% for key, dojang in dojangs %}
+                <li><a href="#" onclick="openInfoWindow({{ key }});return false;">{{ dojang.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span8">
+            <div id="mapCanvas" class="span8" style="height: 500px; width: 99%;border: 1px solid #808080;"></div>
+        </div>
+    </div>
+    <script>
+        var markers = [];
+        function openInfoWindow(key) {
+            markerId = markers[key];
+            google.maps.event.trigger(markerId, 'click');
+        }
+    </script>
+{% endblock %}
+
+{% block body_js_jquery_ready %}
+    var mapOptions = {
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map($('#mapCanvas')[0], mapOptions);
+    var bounds = new google.maps.LatLngBounds();
+    //var geocoder = new google.maps.Geocoder();
+    var infoWindow = null;;
+    {% for key, dojang in dojangs %}
+        var latLng{{ key }} = new google.maps.LatLng({{ dojang.location.lat }}, {{ dojang.location.lng }});
+        var marker{{ key }} = new google.maps.Marker({
+            map: map,
+            position: latLng{{ key }},
+            animation: google.maps.Animation.DROP,
+            flat: true,
+            title: '{{ dojang.name }}'
+        });
+        bounds.extend(marker{{ key }}.getPosition());
+
+        google.maps.event.addListener(marker{{ key }}, 'click', function () {
+            if(infoWindow) {
+                infoWindow.close();
+            }
+            //var latLng = new google.maps.LatLng({{ dojang.location.lat }}, {{ dojang.location.lng }});
+            contentString = '<h4>{{ dojang.name }}</h4><br />' +
+                            '<small>' +
+                                '<strong>Instructor:</strong> {{ dojang.instructor }}<br />' +
+                                '<strong>Phone:</strong>  {{ dojang.phone }}<br />' +
+                                {% if dojang.email is not empty %}
+                                '    <strong>Email:</strong>' +
+                                '    <a href="mailto:{{ dojang.email }}">{{ dojang.email }}</a><br />' +
+                                {% endif %}
+                                {% if dojang.website is not empty %}
+                                '    <strong>Website:</strong>' +
+                                '    <a href="{{ dojang.website }}" target="_blank">{{ dojang.website }}</a><br />' +
+                                {% endif %}
+                                '<strong>Address</strong>' +
+                                '<address>' +
+                                '    {{ dojang.address }}' +
+                                '</address>' +
+                            '</small>';
+            infoWindow = new google.maps.InfoWindow({
+                content: contentString,
+                position: latLng{{ key }}
+            });
+            map.setCenter(latLng{{ key }});
+            map.setZoom(10);
+            infoWindow.open(map);
+        });
+        markers[{{ key }}] = marker{{ key }};
+    {% endfor %}
+    var center = bounds.getCenter();
+    map.setCenter(center);
+    map.fitBounds(bounds);
+{% endblock %}

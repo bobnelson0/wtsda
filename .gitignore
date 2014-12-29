@@ -1,0 +1,14 @@
+#App files
+app/cache/*
+app/logs/*
+app/bootstrap.php.cache
+web/phpunit
+
+#Vendor files
+vendor/*
+
+#IDE Files
+.idea
+
+#OS generated files
+.DS_Store

@@ -1,0 +1,29 @@
+{% extends "WtsdaAppBundle:Layouts:defaultWithSideBar.html.twig" %}
+
+{% block navActNews %} class="active"{% endblock %}
+
+{% block head_title_tag_page %}{% trans %}app.title.news.text{% endtrans %}{% endblock %}
+
+{% block leftContent %}
+    <h3 class="pageTitle">{% trans %}app.headers.news.text{% endtrans %}</h3>
+    <div class="well well-small">
+        <div class="row-fluid">
+            <div class="span9">
+                <h4>Title goes here</h4>
+            </div>
+            <div class="span3 pull-right">
+                <a href="#">Read more...</a>
+            </div>
+        </div>
+        <hr class="simple">
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
+    <div class="well well-small">
+        <h4>Title goes here</h4>
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
+    <div class="well well-small">
+        <h4>Title goes here</h4>
+        <p>{% trans %}app.debug.filler.bacon{% endtrans %}</p>
+    </div>
+{% endblock %}

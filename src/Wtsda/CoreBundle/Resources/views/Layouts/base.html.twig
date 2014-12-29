@@ -1,0 +1,40 @@
+{% extends "OryzoneBoilerplateBundle::html5.html.twig" %}
+
+{% block head_meta_viewport_tag_content %}width=device-width, initial-scale=1.0{% endblock %}
+
+{% block head_css %}
+<link rel="shortcut icon" sizes="16x16" href="{{ asset('bundles/wtsdacore/images/favicon.ico') }}" />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+{% endblock %}
+
+{% block head_js %}{% endblock %}
+
+{% block body_container %}
+<div id="container">
+    <div id="header">
+    {% block body_container_header %}{% endblock %}
+    </div>
+
+    <div id="main">
+    {% block body_container_main %}{% endblock %}
+    </div>
+
+    <div id="footer">
+    {% block body_container_footer %}{% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% block body_js_jquery %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    {% if useMap is defined and useMap == true %}
+        <script src="//maps.googleapis.com/maps/api/js?key={{ google_api_key }}&v=3.12&sensor=false"></script>
+    {% endif %}
+    <script>
+        $(document).ready(function() {
+        {% block body_js_jquery_ready %}{% endblock %}
+        });
+    </script>
+{% endblock %}
